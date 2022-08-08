@@ -1,0 +1,1266 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="DAS_CONVERTModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="CLIENT_KODLAMA">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AJANS" Type="nvarchar" MaxLength="50" />
+          <Property Name="MUSTERI" Type="nvarchar" MaxLength="90" />
+          <Property Name="MUSTERI_KODU" Type="nvarchar" MaxLength="50" />
+          <Property Name="MUSTERI_KODU_CONVERT" Type="nvarchar" MaxLength="50" />
+          <Property Name="MUSTERI_GRUBU" Type="nvarchar" MaxLength="50" />
+          <Property Name="MUSTERI_GRUBU_CONVERT" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="DG_ALTBASLIK">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ALT_BASLIK" Type="nvarchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="DG_ANABASLIK_PROGRAMMATIC">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="KATEGORI" Type="nvarchar" MaxLength="20" />
+          <Property Name="ANA_BASLIK" Type="nvarchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="DG_ANABASLIK_RESERVE">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="KATEGORI" Type="nvarchar" MaxLength="50" />
+          <Property Name="ANA_BASLIK" Type="nvarchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="DG_ANABASLIK_SEARCH">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="KATEGORI" Type="nvarchar" MaxLength="20" />
+          <Property Name="ANA_BASLIK" Type="nvarchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="DG_ANABASLIK_SOCIAL">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="KATEGORI" Type="nvarchar" MaxLength="20" />
+          <Property Name="ANA_BASLIK" Type="nvarchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="DG_ANABASLIK_TECH_COST">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="KATEGORI" Type="nvarchar" MaxLength="50" />
+          <Property Name="ANA_BASLIK" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="DG_ANABASLIK_VAS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="KATEGORI" Type="nvarchar" MaxLength="50" />
+          <Property Name="ANA_BASLIK" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="DG_ANABASLIK_XAXIS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="KATEGORI" Type="nvarchar" MaxLength="10" />
+          <Property Name="ANA_BASLIK" Type="nvarchar" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="DG_BIRIM">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="KATEGORI" Type="nvarchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="DIGITAL_KODLAMA_GRUPLARI">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="BIRIM" Type="nvarchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="MASTER_ACIKHAVA_TURU">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ACIKHAVA_TURU" Type="nvarchar" MaxLength="50" />
+          <Property Name="ACIKHAVA_TURU_MASTER" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="MASTER_BUDGET_TYPE">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NAME" Type="nvarchar" MaxLength="20" />
+          <Property Name="BUDGET_TYPE" Type="nvarchar" MaxLength="20" />
+          <Property Name="BUDGET_TYPE_CONVERT" Type="nvarchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="MASTER_DIGITAL_KODLAMA">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="BIRIM" Type="nvarchar" MaxLength="20" />
+          <Property Name="ANA_BASLIK" Type="nvarchar" MaxLength="30" />
+          <Property Name="PAZARLAMA_SIRKETI" Type="nvarchar" MaxLength="120" />
+          <Property Name="MECRA_MEDPLAN" Type="nvarchar" MaxLength="30" />
+          <Property Name="PAZARLAMA_SIRKETI_DIGITAL" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="MASTER_MECRA_TRADING_AJANS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NAME" Type="nvarchar" MaxLength="90" />
+          <Property Name="TRADING_KODLANMIS" Type="nvarchar" MaxLength="50" />
+          <Property Name="AJANS_KODLANMIS" Type="nvarchar" MaxLength="90" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MASTER_MEDIA_AGENCY">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NAME" Type="nvarchar" MaxLength="10" />
+          <Property Name="TYPE" Type="nvarchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="MASTER_MEDIA_VEHICLE_TYPE">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="VALIDATION" Type="nvarchar" MaxLength="50" />
+          <Property Name="NAME" Type="nvarchar" MaxLength="50" />
+          <Property Name="MEDIA_TYPE" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="MASTER_OUTDOOR_KODLAMA">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MECRA" Type="nvarchar" MaxLength="90" />
+          <Property Name="MECRA_KODU" Type="nvarchar" MaxLength="50" />
+          <Property Name="MECRA_KODU_CONVERT" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="MASTER_PURCHASE_TYPE">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PURCHASE_TYPE" Type="nvarchar" MaxLength="50" />
+          <Property Name="PURCHASE_NAME" Type="nvarchar" MaxLength="10" />
+          <Property Name="PURCHASE_CONVERT" Type="nvarchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="MASTER_RADYO_PAZSIRK_MECRA">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PAZARLAMA_SIRKETI" Type="nvarchar" MaxLength="90" />
+          <Property Name="MECRA" Type="nvarchar" MaxLength="30" />
+          <Property Name="MECRA_CONVERT" Type="nvarchar" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="MASTER_RADYO_PAZSIRK_PAZSIRK">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RADYO_NAME" Type="nvarchar" MaxLength="90" />
+          <Property Name="RADYO_NAME_EDIT" Type="nvarchar" MaxLength="90" />
+          <Property Name="RADYO_NAME_CONVERT" Type="nvarchar" MaxLength="90" />
+        </EntityType>
+        <EntityType Name="MASTER_SEHIR">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SEHIR" Type="nvarchar" MaxLength="50" />
+          <Property Name="SEHIR_MASTER" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="MASTER_SPONSORSHIP">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="VALIDATION" Type="nvarchar" MaxLength="20" />
+          <Property Name="NAME" Type="nvarchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="MASTER_YEREL_KODLAMA">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PAZARLAMA_SIRKETI" Type="nvarchar" MaxLength="90" />
+          <Property Name="MECRA_KODU" Type="nvarchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="MECRA_KODLAMA">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MECRA" Type="nvarchar" MaxLength="90" />
+          <Property Name="MECRA_KODU" Type="nvarchar" MaxLength="30" />
+          <Property Name="MECRA_KODU_CONVERT" Type="nvarchar" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="MEDPLAN_DETAYLI_FATURA_DOKUMU">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AJANS" Type="nvarchar" MaxLength="50" />
+          <Property Name="MECRA_TURU" Type="nvarchar" MaxLength="30" />
+          <Property Name="INTERNET_KATEGORI" Type="nvarchar" MaxLength="20" />
+          <Property Name="INTERNET_RAPOR_ANA" Type="nvarchar" MaxLength="30" />
+          <Property Name="INTERNET_RAPOR_ALT" Type="nvarchar" MaxLength="10" />
+          <Property Name="SPOT_TIPI" Type="nvarchar" MaxLength="50" />
+          <Property Name="MUSTERI_KODU" Type="nvarchar" MaxLength="20" />
+          <Property Name="MUSTERI_GRUBU" Type="nvarchar" MaxLength="50" />
+          <Property Name="MUSTERI_ADI" Type="nvarchar" MaxLength="50" />
+          <Property Name="URUN_KODU" Type="nvarchar" MaxLength="30" />
+          <Property Name="URUN_ADI" Type="nvarchar" MaxLength="50" />
+          <Property Name="KAMPANYA" Type="nvarchar" MaxLength="150" />
+          <Property Name="EKIP" Type="nvarchar" MaxLength="10" />
+          <Property Name="IS_KOLU" Type="nvarchar" MaxLength="50" />
+          <Property Name="PLAN_KODU" Type="nvarchar" MaxLength="30" />
+          <Property Name="PAZARLAMA_SIRKETI" Type="nvarchar" MaxLength="100" />
+          <Property Name="PAZARLAMA_SIRKETI_2" Type="nvarchar" MaxLength="100" />
+          <Property Name="YAYNI_GRUBU" Type="nvarchar" MaxLength="20" />
+          <Property Name="SEHIR" Type="nvarchar" MaxLength="20" />
+          <Property Name="MECRA_KODU" Type="nvarchar" MaxLength="30" />
+          <Property Name="MECRA_ADI" Type="nvarchar" MaxLength="120" />
+          <Property Name="DONEM" Type="nvarchar" MaxLength="50" />
+          <Property Name="AYLAR" Type="nvarchar" MaxLength="50" />
+          <Property Name="ADET" Type="int" />
+          <Property Name="SURE" Type="int" />
+          <Property Name="NET_TUTAR_DOLAR" Type="float" />
+          <Property Name="ORT_DOLAR_KURU" Type="float" />
+          <Property Name="MUSTERI_BRUT_TUTAR" Type="float" />
+          <Property Name="NET_TUTAR_TL" Type="float" />
+          <Property Name="INTERNET_SATIS_STOPAJ" Type="float" />
+          <Property Name="INTERNET_SATIS_STAPAJ_DAHIL" Type="float" />
+          <Property Name="INTERNET_ALIS_STOPAJ" Type="float" />
+          <Property Name="INTERNET_ALIS_STOPAJ_DAHIL" Type="float" />
+          <Property Name="MUSTERIDEN_GELEN_IADE" Type="float" />
+          <Property Name="MUSTERIDEN_GELEN_STOPAJ" Type="float" />
+          <Property Name="GERCEKLESEN_TUTAR" Type="float" />
+          <Property Name="GERCEKLESEN_TOPLAM" Type="float" />
+          <Property Name="AHB_TUTAR" Type="float" />
+          <Property Name="MUSTERIDEN_IADEN_GELEN_AHB" Type="float" />
+          <Property Name="GERCEKLESEN_AHB_TUTARI" Type="float" />
+          <Property Name="MUSTERI_IADE_FATURA_NO" Type="nvarchar" MaxLength="50" />
+          <Property Name="MUSTERI_IADE_FATURA_TARIH" Type="date" />
+          <Property Name="ONCEKI_YIL_MDV_ORANI" Type="float" />
+          <Property Name="ONCEKI_YIL_MDV_GERLIRI" Type="float" />
+          <Property Name="BU_YIL_MDV_ORANI" Type="float" />
+          <Property Name="BU_YIL_MDV_GELIRI" Type="float" />
+          <Property Name="MECRA_FATURA_TUTARI" Type="float" />
+          <Property Name="MECRA_FATURA_STOPAJ_TUTARI" Type="float" />
+          <Property Name="MECRA_FATURA_NO" Type="nvarchar" MaxLength="300" />
+          <Property Name="MECRA_FATURA_TARIHI" Type="nvarchar" MaxLength="300" />
+          <Property Name="MECRA_FATURA_PARA_BIRIM" Type="nvarchar" MaxLength="20" />
+          <Property Name="MECRA_FATURA_TUTAR_DOVIZ" Type="float" />
+          <Property Name="IADE_TUTAR" Type="float" />
+          <Property Name="IADE_SONRASI_MECRA_FATURA_TUTARI" Type="float" />
+          <Property Name="MECRA_FARK_FATURA_TUTAR" Type="float" />
+          <Property Name="MECRA_FARK_FATURA_NO" Type="nvarchar" MaxLength="80" />
+          <Property Name="MECRA_FARK_FATURA_TARIH" Type="nvarchar" MaxLength="60" />
+          <Property Name="MECRA_FARK_FATURA_PARA" Type="nvarchar" MaxLength="20" />
+          <Property Name="MECRA_FARK_FATURA_TUTARI_DOVIZ" Type="float" />
+          <Property Name="FARK_IADE_TUTARI" Type="float" />
+          <Property Name="FARK_IADE_SONRASI_FATURA_TUTARI" Type="float" />
+          <Property Name="IADELER_SONRASI_MECRA_FATURA_TOP" Type="float" />
+          <Property Name="SATIS_ALIS_FARK" Type="float" />
+          <Property Name="SATIS_ALIS_STOPAJ_FARK" Type="float" />
+          <Property Name="SATIS_ALIS_STOPAJ_FARK_TOP" Type="float" />
+          <Property Name="MECRA_IADE_FATURA_TARIH" Type="date" />
+          <Property Name="MECRA_IADE_FATURA_NO" Type="nvarchar" MaxLength="20" />
+          <Property Name="MECRA_FARK_IADE_FATURA_TARIHI" Type="date" />
+          <Property Name="MECRA_FARK_IADE_FATURA_NO" Type="nvarchar" MaxLength="20" />
+          <Property Name="ORJINAL_FATURA_NO_YAYIN" Type="nvarchar" MaxLength="30" />
+          <Property Name="ORJINAL_FATURA_TARIH_YAYIN" Type="date" />
+          <Property Name="ORJINAL_FATURA_TUTAR_YAYIN" Type="float" />
+          <Property Name="ORJINAL_FATURA_NO_FARK" Type="nvarchar" MaxLength="30" />
+          <Property Name="ORJINAL_FATURA_TARIH_FARK" Type="date" />
+          <Property Name="ORJINAL_FATURA_TUTAR_FARK" Type="float" />
+          <Property Name="ORJINAL_AVANS_FATURA_NO" Type="nvarchar" MaxLength="20" />
+          <Property Name="ORJINAL_AVANS_FATURA_TARIH" Type="date" />
+          <Property Name="ORJINAL_AVANS_FATURA_TUTAR" Type="float" />
+          <Property Name="ORJINAL_FATURA_NO_AHB" Type="nvarchar" MaxLength="20" />
+          <Property Name="ORJINAL_FATURA_TARIH_AHB" Type="date" />
+          <Property Name="ORJINAL_FATURA_TUTAR_AHB" Type="float" />
+          <Property Name="ORJINAL_FATURA_TUTAR_STOPAJ" Type="float" />
+          <Property Name="ORJINAL_FATURA_NO_FARK_AHB" Type="nvarchar" MaxLength="20" />
+          <Property Name="ORJINAL_FATURA_TARIH_FARK_AHB" Type="date" />
+          <Property Name="ORJINAL_FATURA_TUTAR_FARK_AHB" Type="float" />
+          <Property Name="ORJINAL_AVANS_FATURA_NO_AHB" Type="float" />
+          <Property Name="ORJINAL_AVANS_FATURA_TARIH_AHB" Type="date" />
+          <Property Name="ORJINAL_AVANS_FATURA_TUTAR_AHB" Type="float" />
+          <Property Name="ORJINAL_FATURA_MUSTERISI" Type="nvarchar" MaxLength="100" />
+          <Property Name="ORJINAL_FATURA_TUTAR_TOPLAM_YAYIN" Type="float" />
+          <Property Name="ORJINAL_FATURA_TUTAR_TOPLAM_AHB" Type="float" />
+          <Property Name="ORJINAL_FATURA_TUTAR_TOPLAM_YAYIN_STOPAJ" Type="float" />
+          <Property Name="ORJINAL_FATURA_TUTAR_TOPLAM" Type="float" />
+          <Property Name="TASLAK_FATURA_NO_YAYIN" Type="nvarchar" MaxLength="20" />
+          <Property Name="TASLAK_FATURA_TARIH_YAYIN" Type="date" />
+          <Property Name="TASLAK_FATURA_NO_FARK_YAYIN" Type="nvarchar" MaxLength="20" />
+          <Property Name="TASLAK_FATURA_TARIH_FARK_YAYIN" Type="date" />
+          <Property Name="TASLAK_AVANS_FATURA_NO_YAYIN" Type="nvarchar" MaxLength="20" />
+          <Property Name="TASLAK_AVANS_FATURA_TARIH_YAYIN" Type="date" />
+          <Property Name="TASLAK_AVANS_FATURA_TUTAR" Type="float" />
+          <Property Name="TASLAK_FATURA_NO_AHB" Type="nvarchar" MaxLength="20" />
+          <Property Name="TASLAK_FATURA_TARIH_AHB" Type="date" />
+          <Property Name="TASLAK_FATURA_NO_FARK_AHB" Type="nvarchar" MaxLength="20" />
+          <Property Name="TASLAK_FATURA_TARIH_FARK_AHB" Type="date" />
+          <Property Name="TASLAK_AVANS_FATURA_NO_AHB" Type="nvarchar" MaxLength="20" />
+          <Property Name="TASLAK_AVANS_FATURA_TARIH_AHB" Type="date" />
+          <Property Name="TASLAK_AVANS_FATURA_TUTAR_AHB" Type="float" />
+          <Property Name="AHB_ORANI" Type="float" />
+          <Property Name="ACIKLAMA" Type="nvarchar" MaxLength="30" />
+          <Property Name="ALIM_SEKLI" Type="nvarchar" MaxLength="20" />
+          <Property Name="YIL" Type="int" />
+          <Property Name="AY_NO" Type="int" />
+          <Property Name="RAPOR_ALIM_SEKLI" Type="nvarchar" MaxLength="20" />
+          <Property Name="MECRA_FATURA_KIME_KESILIYOR" Type="nvarchar" MaxLength="20" />
+          <Property Name="PLAN_NOTLARI" Type="nvarchar" MaxLength="50" />
+          <Property Name="RAPOR_KATEGORISI" Type="nvarchar" MaxLength="50" />
+          <Property Name="CNTENT" Type="nvarchar" MaxLength="20" />
+          <Property Name="PO_NO" Type="nvarchar" MaxLength="50" />
+          <Property Name="ALT_PO_NO" Type="nvarchar" MaxLength="20" />
+          <Property Name="PO_TUTAR" Type="float" />
+          <Property Name="SATIS_FATURA_KAYNAK" Type="nvarchar" MaxLength="50" />
+          <Property Name="PLAN_SON_KAYIT_BILGISI" Type="nvarchar" MaxLength="80" />
+          <Property Name="PLAN_SON_KAYDEDEN_EPOSTA" Type="nvarchar" MaxLength="50" />
+          <Property Name="PLAN_SYMPHONY_ID" Type="nvarchar" MaxLength="50" />
+          <Property Name="SPOT_SYMPYONH_ID" Type="nvarchar" MaxLength="50" />
+          <Property Name="ENVANTER_KAPSAM" Type="nvarchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="MUSTERI_GRUPLARI">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MUSTERI_GRUBU" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="PAZARLAMASIRKETI_KODLANMIS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MECRA_ADI" Type="nvarchar" MaxLength="90" />
+          <Property Name="AJANS_MECRA_ADI" Type="nvarchar" MaxLength="90" />
+          <Property Name="PAZARLAMA_SIRKETI" Type="nvarchar" MaxLength="90" />
+        </EntityType>
+        <EntityType Name="ROL_LIST">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ROL" Type="nvarchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="USER_LIST">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="USERNAME" Type="nvarchar" MaxLength="30" />
+          <Property Name="EMAIL" Type="nvarchar" MaxLength="50" />
+          <Property Name="ROL" Type="nvarchar" MaxLength="10" />
+          <Property Name="AJANS" Type="nvarchar" MaxLength="10" />
+        </EntityType>
+        <EntityContainer Name="DAS_CONVERTModelStoreContainer">
+          <EntitySet Name="CLIENT_KODLAMA" EntityType="Self.CLIENT_KODLAMA" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DG_ALTBASLIK" EntityType="Self.DG_ALTBASLIK" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DG_ANABASLIK_PROGRAMMATIC" EntityType="Self.DG_ANABASLIK_PROGRAMMATIC" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DG_ANABASLIK_RESERVE" EntityType="Self.DG_ANABASLIK_RESERVE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DG_ANABASLIK_SEARCH" EntityType="Self.DG_ANABASLIK_SEARCH" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DG_ANABASLIK_SOCIAL" EntityType="Self.DG_ANABASLIK_SOCIAL" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DG_ANABASLIK_TECH_COST" EntityType="Self.DG_ANABASLIK_TECH_COST" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DG_ANABASLIK_VAS" EntityType="Self.DG_ANABASLIK_VAS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DG_ANABASLIK_XAXIS" EntityType="Self.DG_ANABASLIK_XAXIS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DG_BIRIM" EntityType="Self.DG_BIRIM" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DIGITAL_KODLAMA_GRUPLARI" EntityType="Self.DIGITAL_KODLAMA_GRUPLARI" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MASTER_ACIKHAVA_TURU" EntityType="Self.MASTER_ACIKHAVA_TURU" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MASTER_BUDGET_TYPE" EntityType="Self.MASTER_BUDGET_TYPE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MASTER_DIGITAL_KODLAMA" EntityType="Self.MASTER_DIGITAL_KODLAMA" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MASTER_MECRA_TRADING_AJANS" EntityType="Self.MASTER_MECRA_TRADING_AJANS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MASTER_MEDIA_AGENCY" EntityType="Self.MASTER_MEDIA_AGENCY" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MASTER_MEDIA_VEHICLE_TYPE" EntityType="Self.MASTER_MEDIA_VEHICLE_TYPE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MASTER_OUTDOOR_KODLAMA" EntityType="Self.MASTER_OUTDOOR_KODLAMA" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MASTER_PURCHASE_TYPE" EntityType="Self.MASTER_PURCHASE_TYPE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MASTER_RADYO_PAZSIRK_MECRA" EntityType="Self.MASTER_RADYO_PAZSIRK_MECRA" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MASTER_RADYO_PAZSIRK_PAZSIRK" EntityType="Self.MASTER_RADYO_PAZSIRK_PAZSIRK" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MASTER_SEHIR" EntityType="Self.MASTER_SEHIR" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MASTER_SPONSORSHIP" EntityType="Self.MASTER_SPONSORSHIP" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MASTER_YEREL_KODLAMA" EntityType="Self.MASTER_YEREL_KODLAMA" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MECRA_KODLAMA" EntityType="Self.MECRA_KODLAMA" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MEDPLAN_DETAYLI_FATURA_DOKUMU" EntityType="Self.MEDPLAN_DETAYLI_FATURA_DOKUMU" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MUSTERI_GRUPLARI" EntityType="Self.MUSTERI_GRUPLARI" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PAZARLAMASIRKETI_KODLANMIS" EntityType="Self.PAZARLAMASIRKETI_KODLANMIS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ROL_LIST" EntityType="Self.ROL_LIST" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="USER_LIST" EntityType="Self.USER_LIST" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DAS_CONVERTModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="CLIENT_KODLAMA">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AJANS" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MUSTERI" Type="String" MaxLength="90" FixedLength="false" Unicode="true" />
+          <Property Name="MUSTERI_KODU" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MUSTERI_KODU_CONVERT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MUSTERI_GRUBU" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MUSTERI_GRUBU_CONVERT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="DG_ALTBASLIK">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ALT_BASLIK" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="DG_ANABASLIK_PROGRAMMATIC">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="KATEGORI" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="ANA_BASLIK" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="DG_ANABASLIK_RESERVE">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="KATEGORI" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ANA_BASLIK" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="DG_ANABASLIK_SEARCH">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="KATEGORI" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="ANA_BASLIK" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="DG_ANABASLIK_SOCIAL">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="KATEGORI" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="ANA_BASLIK" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="DG_ANABASLIK_TECH_COST">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="KATEGORI" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ANA_BASLIK" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="DG_ANABASLIK_VAS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="KATEGORI" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ANA_BASLIK" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="DG_ANABASLIK_XAXIS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="KATEGORI" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="ANA_BASLIK" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="DG_BIRIM">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="KATEGORI" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="MASTER_ACIKHAVA_TURU">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ACIKHAVA_TURU" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ACIKHAVA_TURU_MASTER" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="MASTER_BUDGET_TYPE">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NAME" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="BUDGET_TYPE" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="BUDGET_TYPE_CONVERT" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="MASTER_DIGITAL_KODLAMA">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="BIRIM" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="ANA_BASLIK" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="PAZARLAMA_SIRKETI" Type="String" MaxLength="120" FixedLength="false" Unicode="true" />
+          <Property Name="MECRA_MEDPLAN" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="PAZARLAMA_SIRKETI_DIGITAL" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="MASTER_MECRA_TRADING_AJANS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NAME" Type="String" MaxLength="90" FixedLength="false" Unicode="true" />
+          <Property Name="TRADING_KODLANMIS" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="AJANS_KODLANMIS" Type="String" MaxLength="90" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MASTER_MEDIA_AGENCY">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NAME" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="TYPE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="MASTER_MEDIA_VEHICLE_TYPE">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="VALIDATION" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MEDIA_TYPE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="MASTER_OUTDOOR_KODLAMA">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MECRA" Type="String" MaxLength="90" FixedLength="false" Unicode="true" />
+          <Property Name="MECRA_KODU" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MECRA_KODU_CONVERT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="MASTER_PURCHASE_TYPE">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PURCHASE_TYPE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PURCHASE_NAME" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="PURCHASE_CONVERT" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="MASTER_RADYO_PAZSIRK_MECRA">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PAZARLAMA_SIRKETI" Type="String" MaxLength="90" FixedLength="false" Unicode="true" />
+          <Property Name="MECRA" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="MECRA_CONVERT" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="MASTER_RADYO_PAZSIRK_PAZSIRK">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RADYO_NAME" Type="String" MaxLength="90" FixedLength="false" Unicode="true" />
+          <Property Name="RADYO_NAME_EDIT" Type="String" MaxLength="90" FixedLength="false" Unicode="true" />
+          <Property Name="RADYO_NAME_CONVERT" Type="String" MaxLength="90" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="MASTER_SEHIR">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SEHIR" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SEHIR_MASTER" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="MASTER_SPONSORSHIP">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="VALIDATION" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="NAME" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="MASTER_YEREL_KODLAMA">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PAZARLAMA_SIRKETI" Type="String" MaxLength="90" FixedLength="false" Unicode="true" />
+          <Property Name="MECRA_KODU" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="MECRA_KODLAMA">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MECRA" Type="String" MaxLength="90" FixedLength="false" Unicode="true" />
+          <Property Name="MECRA_KODU" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="MECRA_KODU_CONVERT" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="PAZARLAMASIRKETI_KODLANMIS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MECRA_ADI" Type="String" MaxLength="90" FixedLength="false" Unicode="true" />
+          <Property Name="AJANS_MECRA_ADI" Type="String" MaxLength="90" FixedLength="false" Unicode="true" />
+          <Property Name="PAZARLAMA_SIRKETI" Type="String" MaxLength="90" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="ROL_LIST">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ROL" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="USER_LIST">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="USERNAME" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="EMAIL" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ROL" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="AJANS" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="DAS_CONVERTEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="CLIENT_KODLAMA" EntityType="Self.CLIENT_KODLAMA" />
+          <EntitySet Name="DG_ALTBASLIK" EntityType="Self.DG_ALTBASLIK" />
+          <EntitySet Name="DG_ANABASLIK_PROGRAMMATIC" EntityType="Self.DG_ANABASLIK_PROGRAMMATIC" />
+          <EntitySet Name="DG_ANABASLIK_RESERVE" EntityType="Self.DG_ANABASLIK_RESERVE" />
+          <EntitySet Name="DG_ANABASLIK_SEARCH" EntityType="Self.DG_ANABASLIK_SEARCH" />
+          <EntitySet Name="DG_ANABASLIK_SOCIAL" EntityType="Self.DG_ANABASLIK_SOCIAL" />
+          <EntitySet Name="DG_ANABASLIK_TECH_COST" EntityType="Self.DG_ANABASLIK_TECH_COST" />
+          <EntitySet Name="DG_ANABASLIK_VAS" EntityType="Self.DG_ANABASLIK_VAS" />
+          <EntitySet Name="DG_ANABASLIK_XAXIS" EntityType="Self.DG_ANABASLIK_XAXIS" />
+          <EntitySet Name="DG_BIRIM" EntityType="Self.DG_BIRIM" />
+          <EntitySet Name="MASTER_ACIKHAVA_TURU" EntityType="Self.MASTER_ACIKHAVA_TURU" />
+          <EntitySet Name="MASTER_BUDGET_TYPE" EntityType="Self.MASTER_BUDGET_TYPE" />
+          <EntitySet Name="MASTER_DIGITAL_KODLAMA" EntityType="Self.MASTER_DIGITAL_KODLAMA" />
+          <EntitySet Name="MASTER_MECRA_TRADING_AJANS" EntityType="Self.MASTER_MECRA_TRADING_AJANS" />
+          <EntitySet Name="MASTER_MEDIA_AGENCY" EntityType="Self.MASTER_MEDIA_AGENCY" />
+          <EntitySet Name="MASTER_MEDIA_VEHICLE_TYPE" EntityType="Self.MASTER_MEDIA_VEHICLE_TYPE" />
+          <EntitySet Name="MASTER_OUTDOOR_KODLAMA" EntityType="Self.MASTER_OUTDOOR_KODLAMA" />
+          <EntitySet Name="MASTER_PURCHASE_TYPE" EntityType="Self.MASTER_PURCHASE_TYPE" />
+          <EntitySet Name="MASTER_RADYO_PAZSIRK_MECRA" EntityType="Self.MASTER_RADYO_PAZSIRK_MECRA" />
+          <EntitySet Name="MASTER_RADYO_PAZSIRK_PAZSIRK" EntityType="Self.MASTER_RADYO_PAZSIRK_PAZSIRK" />
+          <EntitySet Name="MASTER_SEHIR" EntityType="Self.MASTER_SEHIR" />
+          <EntitySet Name="MASTER_SPONSORSHIP" EntityType="Self.MASTER_SPONSORSHIP" />
+          <EntitySet Name="MASTER_YEREL_KODLAMA" EntityType="Self.MASTER_YEREL_KODLAMA" />
+          <EntitySet Name="MECRA_KODLAMA" EntityType="Self.MECRA_KODLAMA" />
+          <EntitySet Name="PAZARLAMASIRKETI_KODLANMIS" EntityType="Self.PAZARLAMASIRKETI_KODLANMIS" />
+          <EntitySet Name="ROL_LIST" EntityType="Self.ROL_LIST" />
+          <EntitySet Name="USER_LIST" EntityType="Self.USER_LIST" />
+          <EntitySet Name="MUSTERI_GRUPLARI" EntityType="DAS_CONVERTModel.MUSTERI_GRUPLARI" />
+          <EntitySet Name="MEDPLAN_DETAYLI_FATURA_DOKUMU" EntityType="DAS_CONVERTModel.MEDPLAN_DETAYLI_FATURA_DOKUMU" />
+          <EntitySet Name="DIGITAL_KODLAMA_GRUPLARI" EntityType="DAS_CONVERTModel.DIGITAL_KODLAMA_GRUPLARI" />
+        </EntityContainer>
+        <EntityType Name="MUSTERI_GRUPLARI">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MUSTERI_GRUBU" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="MEDPLAN_DETAYLI_FATURA_DOKUMU">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AJANS" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MECRA_TURU" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="INTERNET_KATEGORI" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="INTERNET_RAPOR_ANA" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="INTERNET_RAPOR_ALT" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="SPOT_TIPI" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MUSTERI_KODU" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="MUSTERI_GRUBU" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MUSTERI_ADI" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="URUN_KODU" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="URUN_ADI" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="KAMPANYA" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="EKIP" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="PLAN_KODU" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="PAZARLAMA_SIRKETI" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PAZARLAMA_SIRKETI_2" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="YAYNI_GRUBU" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="SEHIR" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="MECRA_KODU" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="DONEM" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="AYLAR" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ADET" Type="Int32" />
+          <Property Name="SURE" Type="Int32" />
+          <Property Name="NET_TUTAR_DOLAR" Type="Double" />
+          <Property Name="MUSTERI_BRUT_TUTAR" Type="Double" />
+          <Property Name="NET_TUTAR_TL" Type="Double" />
+          <Property Name="INTERNET_SATIS_STOPAJ" Type="Double" />
+          <Property Name="INTERNET_SATIS_STAPAJ_DAHIL" Type="Double" />
+          <Property Name="INTERNET_ALIS_STOPAJ" Type="Double" />
+          <Property Name="INTERNET_ALIS_STOPAJ_DAHIL" Type="Double" />
+          <Property Name="MUSTERIDEN_GELEN_IADE" Type="Double" />
+          <Property Name="MUSTERIDEN_GELEN_STOPAJ" Type="Double" />
+          <Property Name="GERCEKLESEN_TUTAR" Type="Double" />
+          <Property Name="GERCEKLESEN_TOPLAM" Type="Double" />
+          <Property Name="AHB_TUTAR" Type="Double" />
+          <Property Name="MUSTERIDEN_IADEN_GELEN_AHB" Type="Double" />
+          <Property Name="GERCEKLESEN_AHB_TUTARI" Type="Double" />
+          <Property Name="MUSTERI_IADE_FATURA_NO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MUSTERI_IADE_FATURA_TARIH" Type="DateTime" Precision="0" />
+          <Property Name="ONCEKI_YIL_MDV_ORANI" Type="Double" />
+          <Property Name="ONCEKI_YIL_MDV_GERLIRI" Type="Double" />
+          <Property Name="BU_YIL_MDV_ORANI" Type="Double" />
+          <Property Name="BU_YIL_MDV_GELIRI" Type="Double" />
+          <Property Name="MECRA_FATURA_TUTARI" Type="Double" />
+          <Property Name="MECRA_FATURA_STOPAJ_TUTARI" Type="Double" />
+          <Property Name="MECRA_FATURA_NO" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="MECRA_FATURA_TARIHI" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="MECRA_FATURA_PARA_BIRIM" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="MECRA_FATURA_TUTAR_DOVIZ" Type="Double" />
+          <Property Name="IADE_TUTAR" Type="Double" />
+          <Property Name="IADE_SONRASI_MECRA_FATURA_TUTARI" Type="Double" />
+          <Property Name="MECRA_FARK_FATURA_TUTAR" Type="Double" />
+          <Property Name="MECRA_FARK_FATURA_NO" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+          <Property Name="MECRA_FARK_FATURA_TARIH" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="MECRA_FARK_FATURA_PARA" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="MECRA_FARK_FATURA_TUTARI_DOVIZ" Type="Double" />
+          <Property Name="FARK_IADE_TUTARI" Type="Double" />
+          <Property Name="FARK_IADE_SONRASI_FATURA_TUTARI" Type="Double" />
+          <Property Name="IADELER_SONRASI_MECRA_FATURA_TOP" Type="Double" />
+          <Property Name="SATIS_ALIS_FARK" Type="Double" />
+          <Property Name="SATIS_ALIS_STOPAJ_FARK" Type="Double" />
+          <Property Name="SATIS_ALIS_STOPAJ_FARK_TOP" Type="Double" />
+          <Property Name="MECRA_IADE_FATURA_TARIH" Type="DateTime" Precision="0" />
+          <Property Name="MECRA_IADE_FATURA_NO" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="MECRA_FARK_IADE_FATURA_TARIHI" Type="DateTime" Precision="0" />
+          <Property Name="MECRA_FARK_IADE_FATURA_NO" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="ORJINAL_FATURA_NO_YAYIN" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="ORJINAL_FATURA_TUTAR_YAYIN" Type="Double" />
+          <Property Name="ORJINAL_FATURA_NO_FARK" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="ORJINAL_FATURA_TUTAR_FARK" Type="Double" />
+          <Property Name="ORJINAL_AVANS_FATURA_NO" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="ORJINAL_AVANS_FATURA_TARIH" Type="DateTime" Precision="0" />
+          <Property Name="ORJINAL_AVANS_FATURA_TUTAR" Type="Double" />
+          <Property Name="ORJINAL_FATURA_NO_AHB" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="ORJINAL_FATURA_TARIH_AHB" Type="DateTime" Precision="0" />
+          <Property Name="ORJINAL_FATURA_TUTAR_AHB" Type="Double" />
+          <Property Name="ORJINAL_FATURA_TUTAR_STOPAJ" Type="Double" />
+          <Property Name="ORJINAL_FATURA_NO_FARK_AHB" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="ORJINAL_FATURA_TARIH_FARK_AHB" Type="DateTime" Precision="0" />
+          <Property Name="ORJINAL_FATURA_TUTAR_FARK_AHB" Type="Double" />
+          <Property Name="ORJINAL_AVANS_FATURA_NO_AHB" Type="Double" />
+          <Property Name="ORJINAL_AVANS_FATURA_TARIH_AHB" Type="DateTime" Precision="0" />
+          <Property Name="ORJINAL_AVANS_FATURA_TUTAR_AHB" Type="Double" />
+          <Property Name="ORJINAL_FATURA_MUSTERISI" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ORJINAL_FATURA_TUTAR_TOPLAM_YAYIN" Type="Double" />
+          <Property Name="ORJINAL_FATURA_TUTAR_TOPLAM_AHB" Type="Double" />
+          <Property Name="ORJINAL_FATURA_TUTAR_TOPLAM_YAYIN_STOPAJ" Type="Double" />
+          <Property Name="ORJINAL_FATURA_TUTAR_TOPLAM" Type="Double" />
+          <Property Name="TASLAK_FATURA_NO_YAYIN" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="TASLAK_FATURA_TARIH_YAYIN" Type="DateTime" Precision="0" />
+          <Property Name="TASLAK_FATURA_NO_FARK_YAYIN" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="TASLAK_FATURA_TARIH_FARK_YAYIN" Type="DateTime" Precision="0" />
+          <Property Name="TASLAK_AVANS_FATURA_NO_YAYIN" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="TASLAK_AVANS_FATURA_TARIH_YAYIN" Type="DateTime" Precision="0" />
+          <Property Name="TASLAK_AVANS_FATURA_TUTAR" Type="Double" />
+          <Property Name="TASLAK_FATURA_NO_AHB" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="TASLAK_FATURA_TARIH_AHB" Type="DateTime" Precision="0" />
+          <Property Name="TASLAK_FATURA_NO_FARK_AHB" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="TASLAK_FATURA_TARIH_FARK_AHB" Type="DateTime" Precision="0" />
+          <Property Name="TASLAK_AVANS_FATURA_NO_AHB" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="TASLAK_AVANS_FATURA_TARIH_AHB" Type="DateTime" Precision="0" />
+          <Property Name="TASLAK_AVANS_FATURA_TUTAR_AHB" Type="Double" />
+          <Property Name="AHB_ORANI" Type="Double" />
+          <Property Name="ACIKLAMA" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="ALIM_SEKLI" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="YIL" Type="Int32" />
+          <Property Name="AY_NO" Type="Int32" />
+          <Property Name="RAPOR_ALIM_SEKLI" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="MECRA_FATURA_KIME_KESILIYOR" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="RAPOR_KATEGORISI" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CNTENT" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="PO_NO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ALT_PO_NO" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="PO_TUTAR" Type="Double" />
+          <Property Name="SATIS_FATURA_KAYNAK" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PLAN_SON_KAYIT_BILGISI" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+          <Property Name="PLAN_SON_KAYDEDEN_EPOSTA" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PLAN_SYMPHONY_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SPOT_SYMPYONH_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ENVANTER_KAPSAM" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="MECRA_ADI" Type="String" MaxLength="120" FixedLength="false" Unicode="true" />
+          <Property Name="IS_KOLU" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ORT_DOLAR_KURU" Type="Double" />
+          <Property Name="ORJINAL_FATURA_TARIH_YAYIN" Type="DateTime" Precision="0" />
+          <Property Name="ORJINAL_FATURA_TARIH_FARK" Type="DateTime" Precision="0" />
+          <Property Name="PLAN_NOTLARI" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="DIGITAL_KODLAMA_GRUPLARI">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="BIRIM" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DAS_CONVERTModelStoreContainer" CdmEntityContainer="DAS_CONVERTEntities">
+          <EntitySetMapping Name="CLIENT_KODLAMA">
+            <EntityTypeMapping TypeName="DAS_CONVERTModel.CLIENT_KODLAMA">
+              <MappingFragment StoreEntitySet="CLIENT_KODLAMA">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="AJANS" ColumnName="AJANS" />
+                <ScalarProperty Name="MUSTERI" ColumnName="MUSTERI" />
+                <ScalarProperty Name="MUSTERI_KODU" ColumnName="MUSTERI_KODU" />
+                <ScalarProperty Name="MUSTERI_KODU_CONVERT" ColumnName="MUSTERI_KODU_CONVERT" />
+                <ScalarProperty Name="MUSTERI_GRUBU" ColumnName="MUSTERI_GRUBU" />
+                <ScalarProperty Name="MUSTERI_GRUBU_CONVERT" ColumnName="MUSTERI_GRUBU_CONVERT" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DG_ALTBASLIK">
+            <EntityTypeMapping TypeName="DAS_CONVERTModel.DG_ALTBASLIK">
+              <MappingFragment StoreEntitySet="DG_ALTBASLIK">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="ALT_BASLIK" ColumnName="ALT_BASLIK" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DG_ANABASLIK_PROGRAMMATIC">
+            <EntityTypeMapping TypeName="DAS_CONVERTModel.DG_ANABASLIK_PROGRAMMATIC">
+              <MappingFragment StoreEntitySet="DG_ANABASLIK_PROGRAMMATIC">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="KATEGORI" ColumnName="KATEGORI" />
+                <ScalarProperty Name="ANA_BASLIK" ColumnName="ANA_BASLIK" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DG_ANABASLIK_RESERVE">
+            <EntityTypeMapping TypeName="DAS_CONVERTModel.DG_ANABASLIK_RESERVE">
+              <MappingFragment StoreEntitySet="DG_ANABASLIK_RESERVE">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="KATEGORI" ColumnName="KATEGORI" />
+                <ScalarProperty Name="ANA_BASLIK" ColumnName="ANA_BASLIK" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DG_ANABASLIK_SEARCH">
+            <EntityTypeMapping TypeName="DAS_CONVERTModel.DG_ANABASLIK_SEARCH">
+              <MappingFragment StoreEntitySet="DG_ANABASLIK_SEARCH">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="KATEGORI" ColumnName="KATEGORI" />
+                <ScalarProperty Name="ANA_BASLIK" ColumnName="ANA_BASLIK" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DG_ANABASLIK_SOCIAL">
+            <EntityTypeMapping TypeName="DAS_CONVERTModel.DG_ANABASLIK_SOCIAL">
+              <MappingFragment StoreEntitySet="DG_ANABASLIK_SOCIAL">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="KATEGORI" ColumnName="KATEGORI" />
+                <ScalarProperty Name="ANA_BASLIK" ColumnName="ANA_BASLIK" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DG_ANABASLIK_TECH_COST">
+            <EntityTypeMapping TypeName="DAS_CONVERTModel.DG_ANABASLIK_TECH_COST">
+              <MappingFragment StoreEntitySet="DG_ANABASLIK_TECH_COST">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="KATEGORI" ColumnName="KATEGORI" />
+                <ScalarProperty Name="ANA_BASLIK" ColumnName="ANA_BASLIK" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DG_ANABASLIK_VAS">
+            <EntityTypeMapping TypeName="DAS_CONVERTModel.DG_ANABASLIK_VAS">
+              <MappingFragment StoreEntitySet="DG_ANABASLIK_VAS">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="KATEGORI" ColumnName="KATEGORI" />
+                <ScalarProperty Name="ANA_BASLIK" ColumnName="ANA_BASLIK" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DG_ANABASLIK_XAXIS">
+            <EntityTypeMapping TypeName="DAS_CONVERTModel.DG_ANABASLIK_XAXIS">
+              <MappingFragment StoreEntitySet="DG_ANABASLIK_XAXIS">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="KATEGORI" ColumnName="KATEGORI" />
+                <ScalarProperty Name="ANA_BASLIK" ColumnName="ANA_BASLIK" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DG_BIRIM">
+            <EntityTypeMapping TypeName="DAS_CONVERTModel.DG_BIRIM">
+              <MappingFragment StoreEntitySet="DG_BIRIM">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="KATEGORI" ColumnName="KATEGORI" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MASTER_ACIKHAVA_TURU">
+            <EntityTypeMapping TypeName="DAS_CONVERTModel.MASTER_ACIKHAVA_TURU">
+              <MappingFragment StoreEntitySet="MASTER_ACIKHAVA_TURU">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="ACIKHAVA_TURU" ColumnName="ACIKHAVA_TURU" />
+                <ScalarProperty Name="ACIKHAVA_TURU_MASTER" ColumnName="ACIKHAVA_TURU_MASTER" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MASTER_BUDGET_TYPE">
+            <EntityTypeMapping TypeName="DAS_CONVERTModel.MASTER_BUDGET_TYPE">
+              <MappingFragment StoreEntitySet="MASTER_BUDGET_TYPE">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+                <ScalarProperty Name="BUDGET_TYPE" ColumnName="BUDGET_TYPE" />
+                <ScalarProperty Name="BUDGET_TYPE_CONVERT" ColumnName="BUDGET_TYPE_CONVERT" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MASTER_DIGITAL_KODLAMA">
+            <EntityTypeMapping TypeName="DAS_CONVERTModel.MASTER_DIGITAL_KODLAMA">
+              <MappingFragment StoreEntitySet="MASTER_DIGITAL_KODLAMA">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="BIRIM" ColumnName="BIRIM" />
+                <ScalarProperty Name="ANA_BASLIK" ColumnName="ANA_BASLIK" />
+                <ScalarProperty Name="PAZARLAMA_SIRKETI" ColumnName="PAZARLAMA_SIRKETI" />
+                <ScalarProperty Name="MECRA_MEDPLAN" ColumnName="MECRA_MEDPLAN" />
+                <ScalarProperty Name="PAZARLAMA_SIRKETI_DIGITAL" ColumnName="PAZARLAMA_SIRKETI_DIGITAL" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MASTER_MECRA_TRADING_AJANS">
+            <EntityTypeMapping TypeName="DAS_CONVERTModel.MASTER_MECRA_TRADING_AJANS">
+              <MappingFragment StoreEntitySet="MASTER_MECRA_TRADING_AJANS">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+                <ScalarProperty Name="TRADING_KODLANMIS" ColumnName="TRADING_KODLANMIS" />
+                <ScalarProperty Name="AJANS_KODLANMIS" ColumnName="AJANS_KODLANMIS" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MASTER_MEDIA_AGENCY">
+            <EntityTypeMapping TypeName="DAS_CONVERTModel.MASTER_MEDIA_AGENCY">
+              <MappingFragment StoreEntitySet="MASTER_MEDIA_AGENCY">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+                <ScalarProperty Name="TYPE" ColumnName="TYPE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MASTER_MEDIA_VEHICLE_TYPE">
+            <EntityTypeMapping TypeName="DAS_CONVERTModel.MASTER_MEDIA_VEHICLE_TYPE">
+              <MappingFragment StoreEntitySet="MASTER_MEDIA_VEHICLE_TYPE">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="VALIDATION" ColumnName="VALIDATION" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+                <ScalarProperty Name="MEDIA_TYPE" ColumnName="MEDIA_TYPE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MASTER_OUTDOOR_KODLAMA">
+            <EntityTypeMapping TypeName="DAS_CONVERTModel.MASTER_OUTDOOR_KODLAMA">
+              <MappingFragment StoreEntitySet="MASTER_OUTDOOR_KODLAMA">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="MECRA" ColumnName="MECRA" />
+                <ScalarProperty Name="MECRA_KODU" ColumnName="MECRA_KODU" />
+                <ScalarProperty Name="MECRA_KODU_CONVERT" ColumnName="MECRA_KODU_CONVERT" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MASTER_PURCHASE_TYPE">
+            <EntityTypeMapping TypeName="DAS_CONVERTModel.MASTER_PURCHASE_TYPE">
+              <MappingFragment StoreEntitySet="MASTER_PURCHASE_TYPE">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="PURCHASE_TYPE" ColumnName="PURCHASE_TYPE" />
+                <ScalarProperty Name="PURCHASE_NAME" ColumnName="PURCHASE_NAME" />
+                <ScalarProperty Name="PURCHASE_CONVERT" ColumnName="PURCHASE_CONVERT" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MASTER_RADYO_PAZSIRK_MECRA">
+            <EntityTypeMapping TypeName="DAS_CONVERTModel.MASTER_RADYO_PAZSIRK_MECRA">
+              <MappingFragment StoreEntitySet="MASTER_RADYO_PAZSIRK_MECRA">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="PAZARLAMA_SIRKETI" ColumnName="PAZARLAMA_SIRKETI" />
+                <ScalarProperty Name="MECRA" ColumnName="MECRA" />
+                <ScalarProperty Name="MECRA_CONVERT" ColumnName="MECRA_CONVERT" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MASTER_RADYO_PAZSIRK_PAZSIRK">
+            <EntityTypeMapping TypeName="DAS_CONVERTModel.MASTER_RADYO_PAZSIRK_PAZSIRK">
+              <MappingFragment StoreEntitySet="MASTER_RADYO_PAZSIRK_PAZSIRK">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="RADYO_NAME" ColumnName="RADYO_NAME" />
+                <ScalarProperty Name="RADYO_NAME_EDIT" ColumnName="RADYO_NAME_EDIT" />
+                <ScalarProperty Name="RADYO_NAME_CONVERT" ColumnName="RADYO_NAME_CONVERT" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MASTER_SEHIR">
+            <EntityTypeMapping TypeName="DAS_CONVERTModel.MASTER_SEHIR">
+              <MappingFragment StoreEntitySet="MASTER_SEHIR">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="SEHIR" ColumnName="SEHIR" />
+                <ScalarProperty Name="SEHIR_MASTER" ColumnName="SEHIR_MASTER" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MASTER_SPONSORSHIP">
+            <EntityTypeMapping TypeName="DAS_CONVERTModel.MASTER_SPONSORSHIP">
+              <MappingFragment StoreEntitySet="MASTER_SPONSORSHIP">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="VALIDATION" ColumnName="VALIDATION" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MASTER_YEREL_KODLAMA">
+            <EntityTypeMapping TypeName="DAS_CONVERTModel.MASTER_YEREL_KODLAMA">
+              <MappingFragment StoreEntitySet="MASTER_YEREL_KODLAMA">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="PAZARLAMA_SIRKETI" ColumnName="PAZARLAMA_SIRKETI" />
+                <ScalarProperty Name="MECRA_KODU" ColumnName="MECRA_KODU" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MECRA_KODLAMA">
+            <EntityTypeMapping TypeName="DAS_CONVERTModel.MECRA_KODLAMA">
+              <MappingFragment StoreEntitySet="MECRA_KODLAMA">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="MECRA" ColumnName="MECRA" />
+                <ScalarProperty Name="MECRA_KODU" ColumnName="MECRA_KODU" />
+                <ScalarProperty Name="MECRA_KODU_CONVERT" ColumnName="MECRA_KODU_CONVERT" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PAZARLAMASIRKETI_KODLANMIS">
+            <EntityTypeMapping TypeName="DAS_CONVERTModel.PAZARLAMASIRKETI_KODLANMIS">
+              <MappingFragment StoreEntitySet="PAZARLAMASIRKETI_KODLANMIS">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="MECRA_ADI" ColumnName="MECRA_ADI" />
+                <ScalarProperty Name="AJANS_MECRA_ADI" ColumnName="AJANS_MECRA_ADI" />
+                <ScalarProperty Name="PAZARLAMA_SIRKETI" ColumnName="PAZARLAMA_SIRKETI" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ROL_LIST">
+            <EntityTypeMapping TypeName="DAS_CONVERTModel.ROL_LIST">
+              <MappingFragment StoreEntitySet="ROL_LIST">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="ROL" ColumnName="ROL" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="USER_LIST">
+            <EntityTypeMapping TypeName="DAS_CONVERTModel.USER_LIST">
+              <MappingFragment StoreEntitySet="USER_LIST">
+                <ScalarProperty Name="AJANS" ColumnName="AJANS" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="USERNAME" ColumnName="USERNAME" />
+                <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+                <ScalarProperty Name="ROL" ColumnName="ROL" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MUSTERI_GRUPLARI">
+            <EntityTypeMapping TypeName="DAS_CONVERTModel.MUSTERI_GRUPLARI">
+              <MappingFragment StoreEntitySet="MUSTERI_GRUPLARI">
+                <ScalarProperty Name="MUSTERI_GRUBU" ColumnName="MUSTERI_GRUBU" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MEDPLAN_DETAYLI_FATURA_DOKUMU">
+            <EntityTypeMapping TypeName="DAS_CONVERTModel.MEDPLAN_DETAYLI_FATURA_DOKUMU">
+              <MappingFragment StoreEntitySet="MEDPLAN_DETAYLI_FATURA_DOKUMU">
+                <ScalarProperty Name="PLAN_NOTLARI" ColumnName="PLAN_NOTLARI" />
+                <ScalarProperty Name="ORJINAL_FATURA_TARIH_FARK" ColumnName="ORJINAL_FATURA_TARIH_FARK" />
+                <ScalarProperty Name="ORJINAL_FATURA_TARIH_YAYIN" ColumnName="ORJINAL_FATURA_TARIH_YAYIN" />
+                <ScalarProperty Name="ORT_DOLAR_KURU" ColumnName="ORT_DOLAR_KURU" />
+                <ScalarProperty Name="IS_KOLU" ColumnName="IS_KOLU" />
+                <ScalarProperty Name="MECRA_ADI" ColumnName="MECRA_ADI" />
+                <ScalarProperty Name="ENVANTER_KAPSAM" ColumnName="ENVANTER_KAPSAM" />
+                <ScalarProperty Name="SPOT_SYMPYONH_ID" ColumnName="SPOT_SYMPYONH_ID" />
+                <ScalarProperty Name="PLAN_SYMPHONY_ID" ColumnName="PLAN_SYMPHONY_ID" />
+                <ScalarProperty Name="PLAN_SON_KAYDEDEN_EPOSTA" ColumnName="PLAN_SON_KAYDEDEN_EPOSTA" />
+                <ScalarProperty Name="PLAN_SON_KAYIT_BILGISI" ColumnName="PLAN_SON_KAYIT_BILGISI" />
+                <ScalarProperty Name="SATIS_FATURA_KAYNAK" ColumnName="SATIS_FATURA_KAYNAK" />
+                <ScalarProperty Name="PO_TUTAR" ColumnName="PO_TUTAR" />
+                <ScalarProperty Name="ALT_PO_NO" ColumnName="ALT_PO_NO" />
+                <ScalarProperty Name="PO_NO" ColumnName="PO_NO" />
+                <ScalarProperty Name="CNTENT" ColumnName="CNTENT" />
+                <ScalarProperty Name="RAPOR_KATEGORISI" ColumnName="RAPOR_KATEGORISI" />
+                <ScalarProperty Name="MECRA_FATURA_KIME_KESILIYOR" ColumnName="MECRA_FATURA_KIME_KESILIYOR" />
+                <ScalarProperty Name="RAPOR_ALIM_SEKLI" ColumnName="RAPOR_ALIM_SEKLI" />
+                <ScalarProperty Name="AY_NO" ColumnName="AY_NO" />
+                <ScalarProperty Name="YIL" ColumnName="YIL" />
+                <ScalarProperty Name="ALIM_SEKLI" ColumnName="ALIM_SEKLI" />
+                <ScalarProperty Name="ACIKLAMA" ColumnName="ACIKLAMA" />
+                <ScalarProperty Name="AHB_ORANI" ColumnName="AHB_ORANI" />
+                <ScalarProperty Name="TASLAK_AVANS_FATURA_TUTAR_AHB" ColumnName="TASLAK_AVANS_FATURA_TUTAR_AHB" />
+                <ScalarProperty Name="TASLAK_AVANS_FATURA_TARIH_AHB" ColumnName="TASLAK_AVANS_FATURA_TARIH_AHB" />
+                <ScalarProperty Name="TASLAK_AVANS_FATURA_NO_AHB" ColumnName="TASLAK_AVANS_FATURA_NO_AHB" />
+                <ScalarProperty Name="TASLAK_FATURA_TARIH_FARK_AHB" ColumnName="TASLAK_FATURA_TARIH_FARK_AHB" />
+                <ScalarProperty Name="TASLAK_FATURA_NO_FARK_AHB" ColumnName="TASLAK_FATURA_NO_FARK_AHB" />
+                <ScalarProperty Name="TASLAK_FATURA_TARIH_AHB" ColumnName="TASLAK_FATURA_TARIH_AHB" />
+                <ScalarProperty Name="TASLAK_FATURA_NO_AHB" ColumnName="TASLAK_FATURA_NO_AHB" />
+                <ScalarProperty Name="TASLAK_AVANS_FATURA_TUTAR" ColumnName="TASLAK_AVANS_FATURA_TUTAR" />
+                <ScalarProperty Name="TASLAK_AVANS_FATURA_TARIH_YAYIN" ColumnName="TASLAK_AVANS_FATURA_TARIH_YAYIN" />
+                <ScalarProperty Name="TASLAK_AVANS_FATURA_NO_YAYIN" ColumnName="TASLAK_AVANS_FATURA_NO_YAYIN" />
+                <ScalarProperty Name="TASLAK_FATURA_TARIH_FARK_YAYIN" ColumnName="TASLAK_FATURA_TARIH_FARK_YAYIN" />
+                <ScalarProperty Name="TASLAK_FATURA_NO_FARK_YAYIN" ColumnName="TASLAK_FATURA_NO_FARK_YAYIN" />
+                <ScalarProperty Name="TASLAK_FATURA_TARIH_YAYIN" ColumnName="TASLAK_FATURA_TARIH_YAYIN" />
+                <ScalarProperty Name="TASLAK_FATURA_NO_YAYIN" ColumnName="TASLAK_FATURA_NO_YAYIN" />
+                <ScalarProperty Name="ORJINAL_FATURA_TUTAR_TOPLAM" ColumnName="ORJINAL_FATURA_TUTAR_TOPLAM" />
+                <ScalarProperty Name="ORJINAL_FATURA_TUTAR_TOPLAM_YAYIN_STOPAJ" ColumnName="ORJINAL_FATURA_TUTAR_TOPLAM_YAYIN_STOPAJ" />
+                <ScalarProperty Name="ORJINAL_FATURA_TUTAR_TOPLAM_AHB" ColumnName="ORJINAL_FATURA_TUTAR_TOPLAM_AHB" />
+                <ScalarProperty Name="ORJINAL_FATURA_TUTAR_TOPLAM_YAYIN" ColumnName="ORJINAL_FATURA_TUTAR_TOPLAM_YAYIN" />
+                <ScalarProperty Name="ORJINAL_FATURA_MUSTERISI" ColumnName="ORJINAL_FATURA_MUSTERISI" />
+                <ScalarProperty Name="ORJINAL_AVANS_FATURA_TUTAR_AHB" ColumnName="ORJINAL_AVANS_FATURA_TUTAR_AHB" />
+                <ScalarProperty Name="ORJINAL_AVANS_FATURA_TARIH_AHB" ColumnName="ORJINAL_AVANS_FATURA_TARIH_AHB" />
+                <ScalarProperty Name="ORJINAL_AVANS_FATURA_NO_AHB" ColumnName="ORJINAL_AVANS_FATURA_NO_AHB" />
+                <ScalarProperty Name="ORJINAL_FATURA_TUTAR_FARK_AHB" ColumnName="ORJINAL_FATURA_TUTAR_FARK_AHB" />
+                <ScalarProperty Name="ORJINAL_FATURA_TARIH_FARK_AHB" ColumnName="ORJINAL_FATURA_TARIH_FARK_AHB" />
+                <ScalarProperty Name="ORJINAL_FATURA_NO_FARK_AHB" ColumnName="ORJINAL_FATURA_NO_FARK_AHB" />
+                <ScalarProperty Name="ORJINAL_FATURA_TUTAR_STOPAJ" ColumnName="ORJINAL_FATURA_TUTAR_STOPAJ" />
+                <ScalarProperty Name="ORJINAL_FATURA_TUTAR_AHB" ColumnName="ORJINAL_FATURA_TUTAR_AHB" />
+                <ScalarProperty Name="ORJINAL_FATURA_TARIH_AHB" ColumnName="ORJINAL_FATURA_TARIH_AHB" />
+                <ScalarProperty Name="ORJINAL_FATURA_NO_AHB" ColumnName="ORJINAL_FATURA_NO_AHB" />
+                <ScalarProperty Name="ORJINAL_AVANS_FATURA_TUTAR" ColumnName="ORJINAL_AVANS_FATURA_TUTAR" />
+                <ScalarProperty Name="ORJINAL_AVANS_FATURA_TARIH" ColumnName="ORJINAL_AVANS_FATURA_TARIH" />
+                <ScalarProperty Name="ORJINAL_AVANS_FATURA_NO" ColumnName="ORJINAL_AVANS_FATURA_NO" />
+                <ScalarProperty Name="ORJINAL_FATURA_TUTAR_FARK" ColumnName="ORJINAL_FATURA_TUTAR_FARK" />
+                <ScalarProperty Name="ORJINAL_FATURA_NO_FARK" ColumnName="ORJINAL_FATURA_NO_FARK" />
+                <ScalarProperty Name="ORJINAL_FATURA_TUTAR_YAYIN" ColumnName="ORJINAL_FATURA_TUTAR_YAYIN" />
+                <ScalarProperty Name="ORJINAL_FATURA_NO_YAYIN" ColumnName="ORJINAL_FATURA_NO_YAYIN" />
+                <ScalarProperty Name="MECRA_FARK_IADE_FATURA_NO" ColumnName="MECRA_FARK_IADE_FATURA_NO" />
+                <ScalarProperty Name="MECRA_FARK_IADE_FATURA_TARIHI" ColumnName="MECRA_FARK_IADE_FATURA_TARIHI" />
+                <ScalarProperty Name="MECRA_IADE_FATURA_NO" ColumnName="MECRA_IADE_FATURA_NO" />
+                <ScalarProperty Name="MECRA_IADE_FATURA_TARIH" ColumnName="MECRA_IADE_FATURA_TARIH" />
+                <ScalarProperty Name="SATIS_ALIS_STOPAJ_FARK_TOP" ColumnName="SATIS_ALIS_STOPAJ_FARK_TOP" />
+                <ScalarProperty Name="SATIS_ALIS_STOPAJ_FARK" ColumnName="SATIS_ALIS_STOPAJ_FARK" />
+                <ScalarProperty Name="SATIS_ALIS_FARK" ColumnName="SATIS_ALIS_FARK" />
+                <ScalarProperty Name="IADELER_SONRASI_MECRA_FATURA_TOP" ColumnName="IADELER_SONRASI_MECRA_FATURA_TOP" />
+                <ScalarProperty Name="FARK_IADE_SONRASI_FATURA_TUTARI" ColumnName="FARK_IADE_SONRASI_FATURA_TUTARI" />
+                <ScalarProperty Name="FARK_IADE_TUTARI" ColumnName="FARK_IADE_TUTARI" />
+                <ScalarProperty Name="MECRA_FARK_FATURA_TUTARI_DOVIZ" ColumnName="MECRA_FARK_FATURA_TUTARI_DOVIZ" />
+                <ScalarProperty Name="MECRA_FARK_FATURA_PARA" ColumnName="MECRA_FARK_FATURA_PARA" />
+                <ScalarProperty Name="MECRA_FARK_FATURA_TARIH" ColumnName="MECRA_FARK_FATURA_TARIH" />
+                <ScalarProperty Name="MECRA_FARK_FATURA_NO" ColumnName="MECRA_FARK_FATURA_NO" />
+                <ScalarProperty Name="MECRA_FARK_FATURA_TUTAR" ColumnName="MECRA_FARK_FATURA_TUTAR" />
+                <ScalarProperty Name="IADE_SONRASI_MECRA_FATURA_TUTARI" ColumnName="IADE_SONRASI_MECRA_FATURA_TUTARI" />
+                <ScalarProperty Name="IADE_TUTAR" ColumnName="IADE_TUTAR" />
+                <ScalarProperty Name="MECRA_FATURA_TUTAR_DOVIZ" ColumnName="MECRA_FATURA_TUTAR_DOVIZ" />
+                <ScalarProperty Name="MECRA_FATURA_PARA_BIRIM" ColumnName="MECRA_FATURA_PARA_BIRIM" />
+                <ScalarProperty Name="MECRA_FATURA_TARIHI" ColumnName="MECRA_FATURA_TARIHI" />
+                <ScalarProperty Name="MECRA_FATURA_NO" ColumnName="MECRA_FATURA_NO" />
+                <ScalarProperty Name="MECRA_FATURA_STOPAJ_TUTARI" ColumnName="MECRA_FATURA_STOPAJ_TUTARI" />
+                <ScalarProperty Name="MECRA_FATURA_TUTARI" ColumnName="MECRA_FATURA_TUTARI" />
+                <ScalarProperty Name="BU_YIL_MDV_GELIRI" ColumnName="BU_YIL_MDV_GELIRI" />
+                <ScalarProperty Name="BU_YIL_MDV_ORANI" ColumnName="BU_YIL_MDV_ORANI" />
+                <ScalarProperty Name="ONCEKI_YIL_MDV_GERLIRI" ColumnName="ONCEKI_YIL_MDV_GERLIRI" />
+                <ScalarProperty Name="ONCEKI_YIL_MDV_ORANI" ColumnName="ONCEKI_YIL_MDV_ORANI" />
+                <ScalarProperty Name="MUSTERI_IADE_FATURA_TARIH" ColumnName="MUSTERI_IADE_FATURA_TARIH" />
+                <ScalarProperty Name="MUSTERI_IADE_FATURA_NO" ColumnName="MUSTERI_IADE_FATURA_NO" />
+                <ScalarProperty Name="GERCEKLESEN_AHB_TUTARI" ColumnName="GERCEKLESEN_AHB_TUTARI" />
+                <ScalarProperty Name="MUSTERIDEN_IADEN_GELEN_AHB" ColumnName="MUSTERIDEN_IADEN_GELEN_AHB" />
+                <ScalarProperty Name="AHB_TUTAR" ColumnName="AHB_TUTAR" />
+                <ScalarProperty Name="GERCEKLESEN_TOPLAM" ColumnName="GERCEKLESEN_TOPLAM" />
+                <ScalarProperty Name="GERCEKLESEN_TUTAR" ColumnName="GERCEKLESEN_TUTAR" />
+                <ScalarProperty Name="MUSTERIDEN_GELEN_STOPAJ" ColumnName="MUSTERIDEN_GELEN_STOPAJ" />
+                <ScalarProperty Name="MUSTERIDEN_GELEN_IADE" ColumnName="MUSTERIDEN_GELEN_IADE" />
+                <ScalarProperty Name="INTERNET_ALIS_STOPAJ_DAHIL" ColumnName="INTERNET_ALIS_STOPAJ_DAHIL" />
+                <ScalarProperty Name="INTERNET_ALIS_STOPAJ" ColumnName="INTERNET_ALIS_STOPAJ" />
+                <ScalarProperty Name="INTERNET_SATIS_STAPAJ_DAHIL" ColumnName="INTERNET_SATIS_STAPAJ_DAHIL" />
+                <ScalarProperty Name="INTERNET_SATIS_STOPAJ" ColumnName="INTERNET_SATIS_STOPAJ" />
+                <ScalarProperty Name="NET_TUTAR_TL" ColumnName="NET_TUTAR_TL" />
+                <ScalarProperty Name="MUSTERI_BRUT_TUTAR" ColumnName="MUSTERI_BRUT_TUTAR" />
+                <ScalarProperty Name="NET_TUTAR_DOLAR" ColumnName="NET_TUTAR_DOLAR" />
+                <ScalarProperty Name="SURE" ColumnName="SURE" />
+                <ScalarProperty Name="ADET" ColumnName="ADET" />
+                <ScalarProperty Name="AYLAR" ColumnName="AYLAR" />
+                <ScalarProperty Name="DONEM" ColumnName="DONEM" />
+                <ScalarProperty Name="MECRA_KODU" ColumnName="MECRA_KODU" />
+                <ScalarProperty Name="SEHIR" ColumnName="SEHIR" />
+                <ScalarProperty Name="YAYNI_GRUBU" ColumnName="YAYNI_GRUBU" />
+                <ScalarProperty Name="PAZARLAMA_SIRKETI_2" ColumnName="PAZARLAMA_SIRKETI_2" />
+                <ScalarProperty Name="PAZARLAMA_SIRKETI" ColumnName="PAZARLAMA_SIRKETI" />
+                <ScalarProperty Name="PLAN_KODU" ColumnName="PLAN_KODU" />
+                <ScalarProperty Name="EKIP" ColumnName="EKIP" />
+                <ScalarProperty Name="KAMPANYA" ColumnName="KAMPANYA" />
+                <ScalarProperty Name="URUN_ADI" ColumnName="URUN_ADI" />
+                <ScalarProperty Name="URUN_KODU" ColumnName="URUN_KODU" />
+                <ScalarProperty Name="MUSTERI_ADI" ColumnName="MUSTERI_ADI" />
+                <ScalarProperty Name="MUSTERI_GRUBU" ColumnName="MUSTERI_GRUBU" />
+                <ScalarProperty Name="MUSTERI_KODU" ColumnName="MUSTERI_KODU" />
+                <ScalarProperty Name="SPOT_TIPI" ColumnName="SPOT_TIPI" />
+                <ScalarProperty Name="INTERNET_RAPOR_ALT" ColumnName="INTERNET_RAPOR_ALT" />
+                <ScalarProperty Name="INTERNET_RAPOR_ANA" ColumnName="INTERNET_RAPOR_ANA" />
+                <ScalarProperty Name="INTERNET_KATEGORI" ColumnName="INTERNET_KATEGORI" />
+                <ScalarProperty Name="MECRA_TURU" ColumnName="MECRA_TURU" />
+                <ScalarProperty Name="AJANS" ColumnName="AJANS" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DIGITAL_KODLAMA_GRUPLARI">
+            <EntityTypeMapping TypeName="DAS_CONVERTModel.DIGITAL_KODLAMA_GRUPLARI">
+              <MappingFragment StoreEntitySet="DIGITAL_KODLAMA_GRUPLARI">
+                <ScalarProperty Name="BIRIM" ColumnName="BIRIM" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

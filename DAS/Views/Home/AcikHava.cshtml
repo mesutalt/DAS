@@ -1,0 +1,76 @@
+﻿@model IEnumerable<DAS.Models.MASTER_ACIKHAVA_TURU>
+@{
+    if (Session["account"] == null)
+    {
+        Response.Redirect("~/Home");
+    }
+}
+<title>Açık Hava</title>
+<div class="container-fluid">
+    <div class="row mb-2">
+        <div class="col-sm-6">
+            <h4 class="m-0 text-dark">Açık Hava</h4>
+        </div>
+        <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+                <li class="breadcrumb-item">
+                    <a class="btn btn-warning btn-sm" href="@Url.Action("Acikhavaekle","Home")">
+                        <i class="fas fa-plus">
+                        </i>
+                        Açık Hava Ekle
+                    </a>
+                </li>
+            </ol>
+        </div>
+    </div>
+</div>
+<hr />
+<div class="card">
+    <div class="card-body">
+        <table id="dtBasicExample" class="table table-bordered table-striped" style="font-size:13px">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>ACIK HAVA</th>
+                    <th>ACIK HAVA MASTER</th>
+                    <th>İSLEM</th>
+                </tr>
+            </thead>
+            <tbody>
+                @{
+                    foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@Html.DisplayFor(modelItem => item.ID)</td>
+                            <td>@Html.DisplayFor(modelItem => item.ACIKHAVA_TURU)</td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.ACIKHAVA_TURU_MASTER)
+                            </td>
+                            <td class="project-actions" style="text-align:center">
+                                <a class="btn btn-danger btn-sm" href="@Url.Action("Acikhavadelete","Home", new { id = item.ID })">
+                                    <i class="fas fa-trash">
+                                    </i>
+                                    Sil
+                                </a>
+                            </td>
+                        </tr>
+                    }
+                }
+        </table>
+    </div>
+</div>
+<script src="../../plugins/jquery/jquery.min.js"></script>
+<script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="../../plugins/datatables/jquery.dataTables.js"></script>
+<script src="../../plugins/datatables-bs4/js/dataTables.bootstrap4.js"></script>
+<script>
+    $(document).ready(function () {
+        $('#dtBasicExample').DataTable({
+            "language": {
+                "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Turkish.json"
+            },
+            "pageLength": 25,
+            /*"order": [0,'desc']*/
+        });
+    });
+</script>

@@ -1,0 +1,85 @@
+﻿@model IEnumerable<DAS.Models.MASTER_DIGITAL_KODLAMA>
+@{
+    if (Session["account"] == null)
+    {
+        Response.Redirect("~/Home");
+    }
+}
+<title>Digital Kodlama</title>
+<div class="container-fluid">
+    <div class="row mb-2">
+        <div class="col-sm-6">
+            <h4 class="m-0 text-dark">Digital Kodlama</h4>
+        </div>
+        <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+                <li class="breadcrumb-item">
+                    <a class="btn btn-warning btn-sm" href="@Url.Action("DigitalKodlamaEkle","Home")">
+                        <i class="fas fa-plus">
+                        </i>
+                        Digital Kodlama Ekle
+                    </a>
+                </li>
+            </ol>
+        </div>
+    </div>
+</div>
+<hr />
+<div class="card">
+    <div class="card-body">
+        <table id="dtBasicExample" class="table table-bordered table-striped" style="font-size:13px">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>BIRIM</th>
+                    <th>ANA BASLIK</th>
+                    <th>MECRA MEDPLAN</th>
+                    <th>PAZARLAMA SIRKETI</th>
+                    <th>PAZARLAMA SIRKETI DIGITAL</th>
+                    <th style="text-align:center">İSLEM</th>
+                </tr>
+            </thead>
+            <tbody>
+                @{
+                    foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@Html.DisplayFor(modelItem => item.ID)</td>
+                            <td>@Html.DisplayFor(modelItem => item.BIRIM)</td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.ANA_BASLIK)
+                            </td>
+                            <td>@Html.DisplayFor(modelItem => item.MECRA_MEDPLAN)</td>
+                            <td> @Html.DisplayFor(modelItem => item.PAZARLAMA_SIRKETI)</td>
+                            <td> @Html.DisplayFor(modelItem => item.PAZARLAMA_SIRKETI_DIGITAL)</td>
+                            <td class="project-actions text-right" style="padding-right:1rem; width:15%">
+                                <a class="btn btn-info btn-sm" href="@Url.Action("DigitalEdit", "Home", new { id = item.ID })">
+                                    <i class="fas fa-pencil-alt">
+                                    </i>
+                                    Düzenle
+                                </a>
+                                <a class="btn btn-danger btn-sm" href="@Url.Action("DigitalDelete","Home", new { id = item.ID })">
+                                    <i class="fas fa-trash">
+                                    </i>
+                                    Sil
+                                </a>
+                            </td>
+                        </tr>
+                    }
+                }
+        </table>
+    </div>
+</div>
+<script src="../../plugins/jquery/jquery.min.js"></script>
+<script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="../../plugins/datatables/jquery.dataTables.js"></script>
+<script src="../../plugins/datatables-bs4/js/dataTables.bootstrap4.js"></script>
+<script>$(document).ready(function () {
+        $('#dtBasicExample').DataTable({
+            "language": {
+                "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Turkish.json"
+            },
+            "pageLength": 25,
+            "order": [0,'desc']
+        });
+    });</script>

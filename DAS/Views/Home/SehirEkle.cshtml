@@ -1,0 +1,32 @@
+﻿@model IEnumerable<DAS.Models.MASTER_SEHIR>
+@{
+    if (Session["account"] == null)
+    {
+        Response.Redirect("~/Home");
+    }
+}
+<title>Şehir Ekle</title>
+<h4>Şehir Ekle</h4>
+<hr />
+<div class="row">
+    <div class="col-md-5">
+        <div class="card card-primary">
+            <div class="card-header">
+            </div>
+            @using (Html.BeginForm())
+            {
+                <form role="form">
+                    <div class="card-body">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Şehir:</label>
+                            <input type="text" class="form-control" id="sehir" name="sehir">
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <button type="submit" class="btn btn-primary">Ekle</button>
+                    </div>
+                </form>
+            }
+        </div>
+    </div>
+</div>

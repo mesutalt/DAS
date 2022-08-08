@@ -1,0 +1,36 @@
+﻿@model IEnumerable<DAS.Models.DG_ANABASLIK_TECH_COST>
+@{
+    if (Session["account"] == null)
+    {
+        Response.Redirect("~/Home");
+    }
+}
+<title>DG TechCost Ekle</title>
+<h4>DG TechCost Ekle</h4>
+<hr />
+<div class="row">
+    <div class="col-md-5">
+        <div class="card card-primary">
+            <div class="card-header">
+            </div>
+            @using (Html.BeginForm())
+            {
+                <form role="form">
+                    <div class="card-body">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Kategori:</label>
+                            <input type="text" class="form-control" id="grup" name="name1">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Ana Başlık:</label>
+                            <input type="text" class="form-control" id="grup" name="name2">
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <button type="submit" class="btn btn-primary">Ekle</button>
+                    </div>
+                </form>
+            }
+        </div>
+    </div>
+</div>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="0434309ae03b4a239c22f3c2d3a05344" Name="Diagram1" ZoomLevel="116">
+        <EntityTypeShape EntityType="DAS_CONVERTModel.CLIENT_KODLAMA" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DAS_CONVERTModel.DG_ALTBASLIK" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DAS_CONVERTModel.DG_ANABASLIK_PROGRAMMATIC" Width="1.5" PointX="2.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DAS_CONVERTModel.DG_ANABASLIK_RESERVE" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DAS_CONVERTModel.DG_ANABASLIK_SEARCH" Width="1.5" PointX="4.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DAS_CONVERTModel.DG_ANABASLIK_SOCIAL" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DAS_CONVERTModel.DG_ANABASLIK_TECH_COST" Width="1.5" PointX="0.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DAS_CONVERTModel.DG_ANABASLIK_VAS" Width="1.5" PointX="2.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DAS_CONVERTModel.DG_ANABASLIK_XAXIS" Width="1.5" PointX="6.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DAS_CONVERTModel.DG_BIRIM" Width="1.5" PointX="4.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DAS_CONVERTModel.MASTER_ACIKHAVA_TURU" Width="1.5" PointX="6.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DAS_CONVERTModel.MASTER_BUDGET_TYPE" Width="1.5" PointX="8.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DAS_CONVERTModel.MASTER_DIGITAL_KODLAMA" Width="1.5" PointX="8.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DAS_CONVERTModel.MASTER_MECRA_TRADING_AJANS" Width="1.5" PointX="8.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DAS_CONVERTModel.MASTER_MEDIA_AGENCY" Width="1.5" PointX="0.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DAS_CONVERTModel.MASTER_MEDIA_VEHICLE_TYPE" Width="1.5" PointX="2.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DAS_CONVERTModel.MASTER_OUTDOOR_KODLAMA" Width="1.5" PointX="4.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DAS_CONVERTModel.MASTER_PURCHASE_TYPE" Width="1.5" PointX="6.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DAS_CONVERTModel.MASTER_RADYO_PAZSIRK_MECRA" Width="1.5" PointX="8.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DAS_CONVERTModel.MASTER_RADYO_PAZSIRK_PAZSIRK" Width="1.5" PointX="10.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DAS_CONVERTModel.MASTER_SEHIR" Width="1.5" PointX="10.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DAS_CONVERTModel.MASTER_SPONSORSHIP" Width="1.5" PointX="10.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DAS_CONVERTModel.MASTER_YEREL_KODLAMA" Width="1.5" PointX="10.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DAS_CONVERTModel.MECRA_KODLAMA" Width="1.5" PointX="12.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DAS_CONVERTModel.PAZARLAMASIRKETI_KODLANMIS" Width="1.5" PointX="0.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DAS_CONVERTModel.ROL_LIST" Width="1.5" PointX="2.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DAS_CONVERTModel.USER_LIST" Width="1.5" PointX="12.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DAS_CONVERTModel.MUSTERI_GRUPLARI" Width="1.5" PointX="5.375" PointY="12.75" />
+        <EntityTypeShape EntityType="DAS_CONVERTModel.MEDPLAN_DETAYLI_FATURA_DOKUMU" Width="1.5" PointX="7.375" PointY="12.75" />
+        <EntityTypeShape EntityType="DAS_CONVERTModel.DIGITAL_KODLAMA_GRUPLARI" Width="1.5" PointX="9.375" PointY="12.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

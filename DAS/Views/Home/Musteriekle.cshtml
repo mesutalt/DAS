@@ -1,0 +1,93 @@
+﻿@model DAS.Models.CLIENT_KODLAMA
+@{
+    if (Session["account"] == null)
+    {
+        Response.Redirect("~/Home");
+    }
+}
+<title>Musteri Ekle</title>
+<h4>Client Kodlama Musteri Ekle</h4>
+<hr />
+<div class="col-md-6">
+    <div class="card">
+        <div class="card-header p-2">
+            <ul class="nav nav-pills">
+                <li class="nav-item"><a class="nav-link active" href="#musteri" data-toggle="tab">Müşteri Ekle</a></li>
+                <li class="nav-item"><a class="nav-link" href="#musterigrubu" data-toggle="tab">Müşteri Grubu Ekle</a></li>
+            </ul>
+        </div><!-- /.card-header -->
+        <div class="card-body">
+            <div class="tab-content">
+                <div class="tab-pane active" id="musteri">
+                    @using (Html.BeginForm())
+                    {
+                        @Html.AntiForgeryToken()
+                        <form role="form">
+                            <div class="card-body">
+                                @Html.HiddenFor(model => model.ID)
+                                <div class="form-group">
+                                    <div class="">
+                                        <label class="">Ajans:</label>
+                                        @Html.EditorFor(model => model.AJANS, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.AJANS, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="">
+                                        <label class="">Müşteri:</label>
+                                        @Html.EditorFor(model => model.MUSTERI, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.MUSTERI, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="">
+                                        <label class="">Müşteri Kodu:</label>
+                                        @Html.EditorFor(model => model.MUSTERI_KODU, new { htmlAttributes = new { @class = "form-control" } })
+                                    </div>
+                                </div>
+                                <label class="">Müşeri Grubu:</label>
+                                <div class="form-group">
+                                    <div class="">
+
+                                        @Html.DropDownList("MUSTERI_GRUBU", (IEnumerable<SelectListItem>)ViewBag.grup, new { @class = "form-control select2" })
+                                    </div>
+                                </div>
+                                <div class=" float-right">
+                                    <a href="~/Home/Home" class="btn btn-app">
+                                        <i class="fas fa fa-backward"></i><b>Geri Dön</b>
+                                    </a>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-md-offset-2 ">
+                                        <input type="submit" value="Kaydet" class="btn btn-success " />
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    }
+                    </div>
+                <!-- /.tab-pane -->
+                <div class="tab-pane" id="musterigrubu">
+                    <!-- The timeline -->
+                    @using (Html.BeginForm("GrupEkle", "Home", FormMethod.Post))
+                    {
+                        <form role="form">
+                            <div class="card-body">
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Müşteri Grubu Adı:</label>
+                                    <input type="text" class="form-control" id="grup" name="grup">
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <button type="submit" class="btn btn-primary">Ekle</button>
+                            </div>
+                        </form>
+                    }
+                </div>
+                <!-- /.tab-pane -->
+            </div>
+            <!-- /.tab-content -->
+        </div><!-- /.card-body -->
+    </div>
+    <!-- /.nav-tabs-custom -->
+</div>

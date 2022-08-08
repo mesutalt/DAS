@@ -1,0 +1,36 @@
+﻿@model IEnumerable<DAS.Models.MASTER_MEDIA_VEHICLE_TYPE>
+@{
+    if (Session["account"] == null)
+    {
+        Response.Redirect("~/Home");
+    }
+}
+<title>Media Vehicle Type Ekle</title>
+<h4>Media Vehicle Type Ekle</h4>
+<hr />
+<div class="row">
+    <div class="col-md-5">
+        <div class="card card-primary">
+            <div class="card-header">
+            </div>
+            @using (Html.BeginForm())
+            {
+                <form role="form">
+                    <div class="card-body">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Validation:</label>
+                            <input type="text" class="form-control" name="VALIDATION">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Name:</label>
+                            <input type="text" class="form-control" name="NAME">
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <button type="submit" class="btn btn-primary">Ekle</button>
+                    </div>
+                </form>
+            }
+        </div>
+    </div>
+</div>

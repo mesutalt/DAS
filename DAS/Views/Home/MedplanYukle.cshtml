@@ -1,0 +1,65 @@
+﻿@model DAS.Models.MEDPLAN_DETAYLI_FATURA_DOKUMU
+@{
+    if (Session["account"] == null)
+    {
+        Response.Redirect("~/Home");
+    }
+}
+<title>Medplan Detaylı Fatura </title>
+<h4>Medplan Detaylı Fatura Yükleme</h4>
+<hr />
+@using (Html.BeginForm("MedplanYukle", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()<form>
+        <div class="row">
+            <div class="col-md-5">
+                <div class="card card-warning">
+                    <div class="card-header p-0">
+                        <ul class="nav nav-pills">
+                            <li class=" nav-link"><label>İçe Aktar</label></li>
+                        </ul>
+                    </div><!-- /.card-header -->
+                    <div class="row">
+                        <div class="card-body">
+                            <div class="tab-pane" id="settings">
+                                <div class="form-horizontal">
+                                    <div class="input-group input-group-sm">
+                                        <div class="col-sm-9">
+                                            <div class="input-group">
+                                                <div class="custom-file">
+                                                    <input type="file" name="file" value="Dosya Yükle" id="file" accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <label class="col-sm-3 col-form-label">
+                                            @{
+                                                if ((string)Session["ajans"] != "MCM" || (string)Session["ajans"] != "MDS" || (string)Session["ajans"] != "WMG")
+                                                {
+                                                    <select name="ajans" id="ajans">
+                                                        <option value="MCM">MCM</option>
+                                                        <option value="MDS">MDS</option>
+                                                        <option value="WMG">WMG</option>
+                                                    </select>
+                                                }
+                                            }
+                                        </label>
+                                    </div>
+                                    <br />
+                                    <div class="form-group">
+                                        <div class="col-md-offset-2 ">
+                                            <input type="submit" value="Yükle" class="btn btn-info">
+                                        </div>
+                                    </div>
+                                </div>
+                                <label style="color:red;font-size:14px">@ViewBag.hata</label>
+                                <label style="color:cadetblue;font-size:14px">@ViewBag.succes</label>
+                            </div>
+                            <!-- /.tab-pane -->
+                            <!-- /.tab-content -->
+                        </div><!-- /.card-body -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+}

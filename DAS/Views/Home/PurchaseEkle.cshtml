@@ -1,0 +1,36 @@
+﻿@model IEnumerable<DAS.Models.MASTER_PURCHASE_TYPE>
+@{
+    if (Session["account"] == null)
+    {
+        Response.Redirect("~/Home");
+    }
+}
+<title>Purchase Type Ekle</title>
+<h4>Purchase Type Ekle</h4>
+<hr />
+<div class="row">
+    <div class="col-md-5">
+        <div class="card card-primary">
+            <div class="card-header">
+            </div>
+            @using (Html.BeginForm())
+            {
+                <form role="form">
+                    <div class="card-body">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Purchase Type:</label>
+                            <input type="text" class="form-control" id="grup" name="name1">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Purchase Name:</label>
+                            <input type="text" class="form-control" id="grup" name="name2">
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <button type="submit" class="btn btn-primary">Ekle</button>
+                    </div>
+                </form>
+            }
+        </div>
+    </div>
+</div>

@@ -1,0 +1,249 @@
+﻿<aside class="main-sidebar sidebar-dark-primary elevation-4" style="font-size:14px">
+    <!-- Brand Logo -->
+    <div class="brand-link">
+        <img src="~/Content/Admin/dist/img/stock1.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
+             style="opacity: .8">
+        <a href="#"><span class="brand-text font-weight-light"><font size="4" style="color:yellow;"><b>DAS</b></font></span></a>
+    </div>
+    <div class="sidebar">
+        <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+            <div class="image">
+                <img src="~/Content/Admin/dist/img/user_2.png" class="img-circle elevation-2" alt="User Image">
+            </div>
+            <div class="info">
+                <div class="d-block"><font color="white" size="4"> &nbsp;</font><font color="orange" size="4">  @Session["username"]</font></div>
+            </div>
+        </div>
+        <nav class="mt-2">
+            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                <li class="nav-item has-treeview menu-open">
+                    <a href="#" class="nav-link active">
+                        <i class="nav-icon fas fa fa-plus-square"></i>
+                        <p>
+                            Ekle
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="~/Home/MedplanYukle" class="nav-link @(ViewContext.RouteData.Values["Action"].ToString() == "MedplanYukle" ? "active" : "")">
+                                <i class="far fa fa-upload nav-icon"></i>
+                                <p>Medplan Fatura Yükle</p>
+                            </a>
+                        </li>
+                        @*<li class="nav-item">
+                    <a href="~/Home/GrupEkle" class="nav-link @(ViewContext.RouteData.Values["Action"].ToString() == "GrupEkle" ? "active" : "")">
+                        <i class="fas fa-copy nav-icon"></i>
+                        <p>Müşteri Grubu Ekle</p>
+                    </a>
+                </li>*@
+                    </ul>
+                </li>
+                <li class="nav-item has-treeview @(ViewContext.RouteData.Values["controller"].ToString() == "Home" ? "menu-open" : "") ">
+                    <a href="#" class="nav-link active ">
+                        <i class="nav-icon fas fa fa-cubes"></i>
+                        <p>
+                            Master List
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item ">
+                            <a href="~/Home/Home" class="nav-link @(ViewContext.RouteData.Values["Action"].ToString() == "Home" ? "active" : "")">
+                                <i class="far fa fa-list-ul nav-icon"></i>
+                                <p>Musteri Listele</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="~/Home/AcikHava" class="nav-link @(ViewContext.RouteData.Values["Action"].ToString() == "AcikHava" ? "active" : "")">
+                                <i class="far fa fa-align-justify nav-icon"></i>
+                                <p>Açık Hava Türü Listele</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="~/Home/BugdetType" class="nav-link @(ViewContext.RouteData.Values["Action"].ToString() == "BugdetType" ? "active" : "")">
+                                <i class="far fa fa-align-justify nav-icon"></i>
+                                <p>Budget Type Listele</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="~/Home/DigitalKodlama" class="nav-link @(ViewContext.RouteData.Values["Action"].ToString() == "DigitalKodlama" ? "active" : "")">
+                                <i class="far fa fa-list-ul nav-icon"></i>
+                                <p>Digital Kodlama Listele</p>
+                            </a>
+                        <li class="nav-item">
+                            <a href="~/Home/TradingAjans" class="nav-link @(ViewContext.RouteData.Values["Action"].ToString() == "TradingAjans" ? "active" : "")">
+                                <i class="far fa fa-align-left nav-icon"></i>
+                                <p>Mecra Trading Ajans Listele</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="~/Home/MecraKodlama" class="nav-link @(ViewContext.RouteData.Values["Action"].ToString() == "MecraKodlama" ? "active" : "")">
+                                <i class="far fa fa-align-left nav-icon"></i>
+                                <p>Mecra Kodlama</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="~/Home/MediaAgency" class="nav-link @(ViewContext.RouteData.Values["Action"].ToString() == "MediaAgency" ? "active" : "")">
+                                <i class="far fa fa-align-left nav-icon"></i>
+                                <p>Media Agency Listele</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="~/Home/Vehicle" class="nav-link @(ViewContext.RouteData.Values["Action"].ToString() == "Vehicle" ? "active" : "")">
+                                <i class="far fa fa-align-left nav-icon"></i>
+                                <p>Media Vehicle Type Listele</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="~/Home/OutdoorKodlama" class="nav-link @(ViewContext.RouteData.Values["Action"].ToString() == "OutdoorKodlama" ? "active" : "")">
+                                <i class="far fa fa-align-left nav-icon"></i>
+                                <p>Outdoor Listesi</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="~/Home/PazarlamaSirketi" class="nav-link @(ViewContext.RouteData.Values["Action"].ToString() == "PazarlamaSirketi" ? "active" : "")">
+                                <i class="far fa fa-align-left nav-icon"></i>
+                                <p>Pazarlama Şirketi listesi</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="~/Home/Purchase" class="nav-link @(ViewContext.RouteData.Values["Action"].ToString() == "Purchase" ? "active" : "")">
+                                <i class="far fa fa-align-left nav-icon"></i>
+                                <p>Purchase Type Listesi</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="~/Home/RadyoMecra" class="nav-link @(ViewContext.RouteData.Values["Action"].ToString() == "RadyoMecra" ? "active" : "")">
+                                <i class="far fa fa-align-left nav-icon"></i>
+                                <p>Radyo Mecra Listesi</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="~/Home/RadyoPazarlama" class="nav-link @(ViewContext.RouteData.Values["Action"].ToString() == "RadyoPazarlama" ? "active" : "")">
+                                <i class="far fa fa-align-left nav-icon"></i>
+                                <p>Radyo PazŞirk Listesi</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="~/Home/Sehir" class="nav-link @(ViewContext.RouteData.Values["Action"].ToString() == "Sehir" ? "active" : "")">
+                                <i class="far fa fa-align-left nav-icon"></i>
+                                <p>Şehir Listesi</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="~/Home/Sponsorship" class="nav-link @(ViewContext.RouteData.Values["Action"].ToString() == "Sponsorship" ? "active" : "")">
+                                <i class="far fa fa-align-left nav-icon"></i>
+                                <p>Sponsorship Listesi</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="~/Home/YerelKodlama" class="nav-link @(ViewContext.RouteData.Values["Action"].ToString() == "YerelKodlama" ? "active" : "")">
+                                <i class="far fa fa-align-left nav-icon"></i>
+                                <p>Yerel Kodlama listesi</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="nav-item has-treeview @(ViewContext.RouteData.Values["controller"].ToString() == "DG" ? "menu-open" : "") ">
+                    <a href="#" class="nav-link active ">
+                        <i class="nav-icon fas fa fa-tree"></i>
+                        <p>
+                            DG
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item ">
+                            <a href="~/DG/Altbaslik" class="nav-link @(ViewContext.RouteData.Values["Action"].ToString() == "Altbaslik" ? "active" : "")">
+                                <i class="far fa fa-list-ul nav-icon"></i>
+                                <p>Alt Başlık</p>
+                            </a>
+                        </li>
+                        <li class="nav-item ">
+                            <a href="~/DG/Programmatic" class="nav-link @(ViewContext.RouteData.Values["Action"].ToString() == "Programmatic" ? "active" : "")">
+                                <i class="far fa fa-list-ul nav-icon"></i>
+                                <p>Ana Başlık Programmatic</p>
+                            </a>
+                        </li>
+                        <li class="nav-item ">
+                            <a href="~/DG/Reserve" class="nav-link @(ViewContext.RouteData.Values["Action"].ToString() == "Reserve" ? "active" : "")">
+                                <i class="far fa fa-list-ul nav-icon"></i>
+                                <p>Ana Başlık Reserve</p>
+                            </a>
+                        </li>
+                        <li class="nav-item ">
+                            <a href="~/DG/Search" class="nav-link @(ViewContext.RouteData.Values["Action"].ToString() == "Search" ? "active" : "")">
+                                <i class="far fa fa-list-ul nav-icon"></i>
+                                <p>Ana Başlık Search</p>
+                            </a>
+                        </li>
+                        <li class="nav-item ">
+                            <a href="~/DG/Social" class="nav-link @(ViewContext.RouteData.Values["Action"].ToString() == "Social" ? "active" : "")">
+                                <i class="far fa fa-list-ul nav-icon"></i>
+                                <p>Ana Başlık Social</p>
+                            </a>
+                        </li>
+                        <li class="nav-item ">
+                            <a href="~/DG/TechCost" class="nav-link @(ViewContext.RouteData.Values["Action"].ToString() == "TechCost" ? "active" : "")">
+                                <i class="far fa fa-list-ul nav-icon"></i>
+                                <p>Ana Başlık TechCost</p>
+                            </a>
+                        </li>
+                        <li class="nav-item ">
+                            <a href="~/DG/Vas" class="nav-link @(ViewContext.RouteData.Values["Action"].ToString() == "Vas" ? "active" : "")">
+                                <i class="far fa fa-list-ul nav-icon"></i>
+                                <p>Ana Başlık VAS</p>
+                            </a>
+                        </li>
+                        <li class="nav-item ">
+                            <a href="~/DG/Xaxis" class="nav-link @(ViewContext.RouteData.Values["Action"].ToString() == "Xaxis" ? "active" : "")">
+                                <i class="far fa fa-list-ul nav-icon"></i>
+                                <p>Ana Başlık Xaxis</p>
+                            </a>
+                        </li>
+                        <li class="nav-item ">
+                            <a href="~/DG/Birim" class="nav-link @(ViewContext.RouteData.Values["Action"].ToString() == "Birim" ? "active" : "")">
+                                <i class="far fa fa-list-ul nav-icon"></i>
+                                <p>Birim</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="nav-item has-treeview menu-open">
+                    <a href="#" class="nav-link active">
+                        <i class="nav-icon fas fa fa-user"></i>
+                        <p>
+                            Kullanıcı
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+
+                        @*@{
+                    if ((string)Session["statusname"] == "Admin" || (string)Session["statusname"] == "Master")
+                    {
+                        <li class="nav-item">
+                            <a href="@Url.Action("Kisilistele", "Admin")" class="nav-link @(ViewContext.RouteData.Values["Action"].ToString() == "Kisilistele" ? "active" : "")">
+                                <i class="far fa fa-list-alt nav-icon "></i>
+                                <p>Kullanıcı Listele</p>
+                            </a>
+                        </li>
+                    }
+                }*@
+                        <li class="nav-item">
+                            <a href="@Url.Action("profil", "Home",new {name=Session["username"]})" class="nav-link @(ViewContext.RouteData.Values["Action"].ToString() == "profil" ? "active" : "")">
+                                <i class="far fa fa-align-justify nav-icon"></i>
+                                <p>Alt başlık</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+            </ul>
+        </nav>
+    </div>
+    <!-- /.sidebar -->
+</aside>

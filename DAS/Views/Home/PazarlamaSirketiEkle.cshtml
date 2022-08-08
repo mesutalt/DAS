@@ -1,0 +1,36 @@
+﻿@model IEnumerable<DAS.Models.PAZARLAMASIRKETI_KODLANMIS>
+@{
+    if (Session["account"] == null)
+    {
+        Response.Redirect("~/Home");
+    }
+}
+<title>Pazarlama Şirketi Ekle</title>
+<h4>Pazarlama Şirketi Ekle</h4>
+<hr />
+<div class="row">
+    <div class="col-md-5">
+        <div class="card card-primary">
+            <div class="card-header">
+            </div>
+            @using (Html.BeginForm())
+            {
+                <form role="form">
+                    <div class="card-body">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Pazarlama Şirketi:</label>
+                            <input type="text" class="form-control" id="grup" name="name1">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Mecra Adı:</label>
+                            <input type="text" class="form-control" id="grup" name="name2">
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <button type="submit" class="btn btn-primary">Ekle</button>
+                    </div>
+                </form>
+            }
+        </div>
+    </div>
+</div>

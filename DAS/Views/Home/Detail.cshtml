@@ -1,0 +1,54 @@
+﻿@model DAS.Models.CLIENT_KODLAMA
+@{
+    if (Session["account"] == null)
+    {
+        Response.Redirect("~/Home");
+    }
+}
+<title>Client Kodlama Detay</title>
+<h4>Client Kodlama Detayı</h4>
+<hr />
+<div class="card" style="width: 50%">
+    <div class="card-body">
+        <table class="table table-bordered">
+            <tbody>
+                <tr>
+                    <td><b>ID</b></td>
+                    <td>@Html.DisplayFor(model => model.ID)</td>
+                </tr>
+                <tr>
+                    <td><b>AJANS</b></td>
+                    <td>@Html.DisplayFor(model => model.AJANS)</td>
+                </tr>
+                <tr>
+                    <td><b>MUSTERI</b></td>
+                    <td>@Html.DisplayFor(model => model.MUSTERI)</td>
+                </tr>
+                <tr>
+                    <td><b>MUSTERI KODU</b></td>
+                    <td>@Html.DisplayFor(model => model.MUSTERI_KODU)</td>
+                </tr>
+                <tr>
+                    <td><b>MUSTERI GRUBU</b></td>
+                    <td>@Html.DisplayFor(model => model.MUSTERI_GRUBU)</td>
+                </tr>
+            </tbody>
+        </table>
+        <br />
+        <div class="input-group input-group-sm">
+            <label class="col-sm-4">
+                <a class="btn btn-primary btn-sm" href="@Url.Action("Edit", new { ID = Model.ID })">
+                    <i class="fas fa-pencil-alt">
+                    </i>
+                    Düzenle
+                </a>
+            </label>
+            <div class="col-sm-8" style="text-align:right">
+                <a class="btn btn-danger btn-sm" href="@Url.Action("Home")">
+                    <i class="fas fa-angle-double-left"></i>
+                    Geri Dön
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,93 @@
+﻿@model DAS.Models.MASTER_DIGITAL_KODLAMA
+@{
+    if (Session["account"] == null)
+    {
+        Response.Redirect("~/Home");
+    }
+}
+<title>Digital Kodlama Ekle</title>
+<h4>Digital Kodlama Ekle</h4>
+<hr />
+<div class="col-md-6">
+    <div class="card">
+        <div class="card-header p-2">
+            <ul class="nav nav-pills">
+                <li class="nav-item"><a class="nav-link active" href="#musteri" data-toggle="tab">Digital Kodlama Ekle</a></li>
+                <li class="nav-item"><a class="nav-link" href="#musterigrubu" data-toggle="tab">Birim Ekle</a></li>
+            </ul>
+        </div><!-- /.card-header -->
+        <div class="card-body">
+            <div class="tab-content">
+                <div class="tab-pane active" id="musteri">
+                    @using (Html.BeginForm())
+                    {
+                        @Html.AntiForgeryToken()
+                        <form role="form">
+                            <div class="card-body">
+                                @Html.HiddenFor(model => model.ID)
+                                <div class="form-group">
+                                    <div class="">
+                                        <label class="">Ana Başlık:</label>
+                                        @Html.EditorFor(model => model.ANA_BASLIK, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.ANA_BASLIK, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="">
+                                        <label class="">Pazarlama Şirketi:</label>
+                                        @Html.EditorFor(model => model.PAZARLAMA_SIRKETI, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.PAZARLAMA_SIRKETI, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="">
+                                        <label class="">Mecra Medplan:</label>
+                                        @Html.EditorFor(model => model.MECRA_MEDPLAN, new { htmlAttributes = new { @class = "form-control" } })
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="">
+                                        <label class="">Pazarlama Şirketi Digital:</label>
+                                        @Html.EditorFor(model => model.PAZARLAMA_SIRKETI_DIGITAL, new { htmlAttributes = new { @class = "form-control" } })
+                                    </div>
+                                </div>
+                                <label class="">Birim:</label>
+                                <div class="form-group">
+                                    <div class="">
+                                        @Html.DropDownList("BIRIM", (IEnumerable<SelectListItem>)ViewBag.grup, new { @class = "form-control select2" })
+                                    </div>
+                                </div>
+                                <div class=" float-right">
+                                    <a href="~/Home/DigitalKodlama" class="btn btn-app">
+                                        <i class="fas fa fa-backward"></i><b>Geri Dön</b>
+                                    </a>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-md-offset-2 ">
+                                        <input type="submit" value="Kaydet" class="btn btn-success " />
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    }
+                </div>
+                <div class="tab-pane" id="musterigrubu">
+                    @using (Html.BeginForm("Birimekle", "Home", FormMethod.Post))
+                    {
+                        <form role="form">
+                            <div class="card-body">
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Birim Adı:</label>
+                                    <input type="text" class="form-control" id="grup" name="grup">
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <button type="submit" class="btn btn-primary">Ekle</button>
+                            </div>
+                        </form>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
